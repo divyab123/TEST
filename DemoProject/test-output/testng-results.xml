@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Test" duration-ms="53686" started-at="2018-12-26T12:30:08Z" finished-at="2018-12-26T12:31:02Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="53686" started-at="2018-12-26T12:30:08Z" finished-at="2018-12-26T12:31:02Z">
+      <class name="ProductTest.ProductTest">
+        <test-method status="PASS" signature="goToICIXPrd()[pri:0, instance:ProductTest.ProductTest@1e397ed7]" name="goToICIXPrd" duration-ms="5481" started-at="2018-12-26T12:30:47Z" finished-at="2018-12-26T12:30:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goToICIXPrd -->
+        <test-method status="PASS" signature="searchForTP()[pri:0, instance:ProductTest.ProductTest@1e397ed7]" name="searchForTP" duration-ms="8014" started-at="2018-12-26T12:30:52Z" finished-at="2018-12-26T12:31:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchForTP -->
+        <test-method status="PASS" signature="CreateICIXProduct()[pri:0, instance:ProductTest.ProductTest@1e397ed7]" name="CreateICIXProduct" duration-ms="1823" started-at="2018-12-26T12:31:00Z" finished-at="2018-12-26T12:31:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateICIXProduct -->
+      </class> <!-- ProductTest.ProductTest -->
+      <class name="BrowserInstance.BrowserInstance">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:BrowserInstance.BrowserInstance@3f49dace]" name="beforeTest" is-config="true" duration-ms="38338" started-at="2018-12-26T12:30:08Z" finished-at="2018-12-26T12:30:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+      </class> <!-- BrowserInstance.BrowserInstance -->
+    </test> <!-- Test -->
+  </suite> <!-- Test -->
+</testng-results>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Test]">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="ProductTest.ProductTest">
+        <methods>
+          <include name="CreateICIXProduct"/>
+        </methods>
+      </class> <!-- ProductTest.ProductTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Test] -->

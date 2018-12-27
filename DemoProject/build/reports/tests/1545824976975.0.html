@@ -1,0 +1,2517 @@
+<!DOCTYPE html><html ng-app="app" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="ng-scope ext-strict"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+<script src="/static/111213/js/perf/stub.js" type="text/javascript"></script><script src="/jslibrary/1539646802000/sfdc/VFRemote.js" type="text/javascript"></script><script type="text/javascript">window.Sfdc = window.Sfdc || {};
+Sfdc.xdomain = Sfdc.xdomain || {};
+Sfdc.xdomain.sfdcXDomainProxy = 'https://na73.salesforce.com/support/console/xdomain/30.0/crossDomainProxy.html';
+</script><script src="/support/console/xdomain/30.0/xdomain.js" type="text/javascript"></script><script src="/jslibrary/1538677104000/ui-sfdc-javascript-impl/SfdcCore.js" type="text/javascript"></script><script src="/jslibrary/1539646802000/sfdc/AuraAlohaFrameNavigator.js" type="text/javascript"></script><script src="/sforce/one/36.0/api.js" type="text/javascript"></script><script src="/resource/1514184176000/icix_v1__jquery_min" type="text/javascript"></script><script src="/resource/1514184176000/icix_v1__moment_JS" type="text/javascript"></script><script src="/resource/1514184175000/icix_v1__ForceTK" type="text/javascript"></script><script src="/resource/1544435284000/icix_v1__common/bundle.js" type="text/javascript"></script><style type="text/css">.popup-panel {
+  position: fixed;
+  z-index: 9001;
+  border: 1px solid #888;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: white;
+}
+.popup-panel.slds-modal--small {
+  width: 25%;
+  max-width: 480px;
+}
+.popup-panel.slds-modal--medium {
+  width: 50%;
+  max-width: 640px;
+  min-width: 320px;
+}
+.popup-panel.slds-modal--large {
+  width: 90%;
+  max-width: none;
+  min-width: 640px;
+}
+.popup-panel.tall {
+  height: 314px;
+}
+.popup-panel .slds-modal__close.inside {
+  top: -8px;
+}
+.popup-panel.absolute {
+  position: absolute;
+}
+.popup-panel.top {
+  top: 0;
+}
+.popup-panel.top-below-header {
+  top: 100px;
+}
+.popup-panel.left {
+  left: 0;
+}
+.popup-panel.left-30pc {
+  left: 30%;
+}
+.popup-panel.right {
+  right: 0;
+}
+.popup-panel.bottom {
+  bottom: 0;
+}
+.popup-panel.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #888;
+  border-radius: 0;
+}
+.popup-panel.footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border: none;
+  border-top: 1px solid #888;
+  border-radius: 0;
+}
+.popup-panel.footer .slds-modal__footer {
+  text-align: left;
+}
+.popup-panel.sidebar {
+  top: 0;
+  bottom: 0;
+}
+.popup-panel.shadow {
+  box-shadow: 2px 2px 3px #888;
+}
+</style><style type="text/css">edit-field .slds-input.number {
+  text-align: right;
+  padding-right: 0;
+}
+edit-field .pre-text {
+  white-space: pre-line;
+}
+</style><style type="text/css">.lab-selection .lab-detail-label {
+  vertical-align: top;
+  display: inline-block;
+}
+.lab-selection .selected-lab-title {
+  font-weight: bold;
+}
+.lab-selection .selected-lab-address {
+  font-size: 11px;
+}
+</style><style type="text/css">multi-select {
+  display: block;
+  margin: 10px;
+}
+multi-select ul.slds-picklist__options--multi.shown {
+  width: 300px;
+}
+</style><style type="text/css">.partner-connect .uu-tag,
+.product-connect .uu-tag {
+  display: inline-block;
+  min-width: 25%;
+}
+.partner-connect hr,
+.product-connect hr {
+  margin: 16px 0;
+}
+.partner-connect legend.inline,
+.product-connect legend.inline {
+  float: left;
+}
+.slds-tabs--scoped .slds-tabs--scoped__content.slds-show {
+  min-height: 99px;
+  position: relative;
+}
+.slds-tabs--scoped .slds-tabs--scoped__content.slds-show .center-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  height: 24px;
+  width: 24px;
+}
+</style><style type="text/css">.body-background {
+  background-color: white !important;
+}
+product-connect .uu-tag {
+  display: inline-block;
+  min-width: 25%;
+}
+product-connect p.slds-form-element__label {
+  font-size: 14px !important;
+}
+product-connect .mutiselect-producttest multi-select .slds-picklist--draggable {
+  float: left;
+}
+product-connect .mutiselect-producttest multi-select .slds-picklist--draggable .slds-grid--vertical::last-child {
+  display: none;
+}
+product-connect .mutiselect-producttest multi-select .slds-picklist__options.slds-picklist__options--multi {
+  padding: 0;
+}
+product-connect .mutiselect-producttest multi-select .slds-picklist__options.slds-picklist__options--multi .slds-picklist__item.slds-is-selected span {
+  background-color: #037BD8;
+  color: #fff;
+}
+product-connect .mutiselect-producttest .prduct-property {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  float: left;
+  height: 240px;
+  margin-left: -42px;
+  margin-top: 63px;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+  overflow: auto;
+  padding: 4px 5px;
+  width: 300px;
+}
+product-connect .mutiselect-producttest .prduct-property label {
+  position: relative;
+  margin-bottom: 5px;
+}
+product-connect .mutiselect-producttest .prduct-property label .slds-checkbox--faux {
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+product-connect .mutiselect-producttest .prduct-property label .slds-form-element__label {
+  display: inline-block;
+  line-height: 16px;
+  margin-top: 2px;
+  padding-left: 23px;
+}
+product-connect .fadediv {
+  -webkit-animation: fadeinout 0.7s linear 1 forwards;
+  animation: fadeinout 0.7s linear 1 forwards;
+}
+@-webkit-keyframes fadeinout {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeinout {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.slds-page-header .icon-div {
+  background-color: #FFA444;
+  border-radius: 3px;
+  margin-right: 10px;
+  padding: 3px;
+}
+#btnCreateProduct {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+}
+.slds-tabs--scoped__content .slds-show {
+  min-height: 99px;
+  position: relative;
+}
+</style><style type="text/css">popover {
+  float: left;
+  width: 100%;
+}
+popover .relative {
+  width: 100%;
+  display: block;
+}
+popover .selectable {
+  user-select: text;
+}
+popover .slds-popover {
+  font-size: 0.85em;
+}
+popover .slds-popover .wrap-text {
+  white-space: normal;
+}
+popover .slds-popover .text {
+  white-space: pre-line;
+}
+popover .link {
+  color: #005fb2;
+}
+popover .popover_title {
+  margin-top: 5px;
+}
+</style><style type="text/css">product-test-results textarea.comment::-webkit-input-placeholder {
+  color: #C5C9CD;
+}
+product-test-results label.slds-form-element__label {
+  font-weight: bold;
+}
+product-test-results .test-status {
+  text-align: left;
+  font-weight: bold;
+  color: white;
+}
+product-test-results .inlineBlock {
+  display: inline-block;
+}
+product-test-results .pass,
+product-test-results .non-detect,
+product-test-results .non-detectpass {
+  background-color: #42C376;
+}
+product-test-results .warning {
+  background-color: #e4ba00;
+}
+product-test-results .fail,
+product-test-results .kidfail,
+product-test-results .kidchildrensfail {
+  background-color: #BA302D;
+}
+product-test-results .additionaltestingneeded {
+  color: black;
+  font-weight: normal;
+}
+product-test-results .groupsum,
+product-test-results .informationonly {
+  color: black;
+  background-color: #cdd0d3;
+}
+product-test-results .disabledInput {
+  background-color: #dce1eb;
+}
+product-test-results textarea.comment,
+product-test-results div.comment {
+  border: none;
+  color: black;
+  font-weight: normal;
+  height: 100%;
+  width: 100%;
+  resize: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin-left: 2.5px;
+  padding: 8px;
+}
+product-test-results .corrective-action {
+  font-weight: bold;
+}
+product-test-results input[type="radio"] {
+  margin-right: 5px;
+}
+product-test-results .posr,
+product-test-results .relative {
+  position: relative;
+}
+product-test-results table.product-test-results th {
+  font-size: 0.75rem;
+  color: #586A8B;
+  padding: 2px 5px;
+  border: 1px solid #D2D8E2;
+  border-top: none;
+}
+product-test-results table.product-test-results th:first-child,
+product-test-results table.product-test-results td:first-child {
+  border-left: none;
+}
+product-test-results table.product-test-results th:last-child,
+product-test-results table.product-test-results td:last-child {
+  border-right: none;
+}
+product-test-results table.product-test-results td {
+  border: 1px solid #D2D8E2;
+  padding: 5px;
+}
+product-test-results table.product-test-results td span.fontcolorPDF {
+  color: white !important;
+}
+product-test-results table.product-test-results tr.group-sum {
+  background-color: #E0E5EE;
+  font-weight: bold;
+}
+product-test-results table.product-test-results tr.group-sum td {
+  border-bottom: 2px solid #444;
+  border-top: 2px solid #444;
+}
+product-test-results table.product-test-results tr.group-divider td {
+  border-top: 2px solid #a7a7a7;
+}
+product-test-results table.product-test-results td.fixed,
+product-test-results table.product-test-results th.fixed {
+  width: 180px;
+}
+product-test-results table.product-test-results td.checkbox,
+product-test-results table.product-test-results th.checkbox {
+  text-align: center;
+  width: 50px;
+}
+product-test-results table.product-test-results td.action-icons,
+product-test-results table.product-test-results th.action-icons {
+  text-align: center;
+  min-width: 70px;
+}
+product-test-results table.product-test-results .answer {
+  text-align: right;
+  width: 110px;
+}
+product-test-results table.product-test-results .disabled {
+  color: #888c94;
+}
+product-test-results table.product-test-results .disabledLimits {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  background-color: #d1d3d7;
+}
+product-test-results table.product-test-results .test-status {
+  text-align: center;
+}
+product-test-results table.product-test-results .test-result-width {
+  width: 260px;
+}
+product-test-results table.product-test-results .test-result-comment {
+  font-weight: normal;
+  word-wrap: break-word;
+}
+product-test-results .bulk-actions--container select::-ms-expand {
+  display: none;
+}
+product-test-results .bulk-actions--container select.slds-select {
+  height: 36px;
+  color: #d1d3d7;
+}
+product-test-results .bulk-actions--container select.selected {
+  color: #005fb2;
+}
+product-test-results .bulk-actions--container select option {
+  color: #005fb2;
+}
+product-test-results .bulk-actions--container select option:first-child {
+  display: none;
+}
+product-test-results .bulk-actions--container .slds-button {
+  margin-left: 5px;
+}
+product-test-results .answer-non-detect--container {
+  color: #005fb2;
+}
+product-test-results .answer-non-detect--container:hover &gt; .edit-icon-container {
+  display: block;
+}
+product-test-results .answer-non-detect--container .answer-value {
+  position: relative;
+}
+product-test-results .answer-non-detect--container .answer-value abbr {
+  position: absolute;
+  top: 0;
+  right: -12px;
+}
+product-test-results .answer-non-detect--container .edit-icon-container {
+  display: none;
+  position: absolute;
+  right: 0;
+}
+.product-test-selection .slds-pill {
+  font-size: 0.9em;
+}
+.product-test-selection .slds-pill .slds-pill__label.whole {
+  max-width: none;
+}
+.product-test-selection .slds-pill .slds-pill__icon {
+  padding: 4px;
+  background-color: #FFA444;
+}
+.product-test-selection .slds-pill a {
+  text-decoration: none;
+}
+.product-test-selection .slds-pill .item-type {
+  color: grey;
+}
+.product-test-selection .slds-pill__container.noline {
+  border: none;
+}
+</style><style type="text/css">.summary-of-failures .summary-style .summary-of-failures-header,
+.summary-of-failures .summary-style .no-summary {
+  margin-bottom: 10px;
+}
+.summary-of-failures table {
+  margin-bottom: 10px;
+}
+.summary-of-failures table td {
+  border: 1px solid #D2D8E2;
+  padding: 5px;
+}
+.summary-of-failures table td.fixed {
+  width: 30%;
+}
+.summary-of-failures table td.fixed-value {
+  width: 250px;
+}
+.summary-of-failures table th {
+  font-size: 0.75rem;
+  color: #586A8B;
+  border: 1px solid #D2D8E2;
+  border-top: none;
+  padding: 2px 5px;
+}
+.summary-of-failures table th:first-child,
+.summary-of-failures table td:first-child {
+  border-left: none;
+}
+.summary-of-failures table th:last-child,
+.summary-of-failures table td:last-child {
+  border-right: none;
+}
+.summary-of-failures table th.text-center {
+  text-align: center;
+}
+.summary-of-failures .no-borders {
+  border: none;
+}
+.summary-of-failures .on-top {
+  vertical-align: top;
+}
+.summary-of-failures .fail,
+.summary-of-failures .kid,
+.summary-of-failures .warning {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  background-color: #BA302D;
+}
+.summary-of-failures .warning {
+  background-color: #e4ba00;
+}
+</style><style type="text/css">.executive-summary table th {
+  font-size: 0.75rem;
+  color: #586A8B;
+  padding: 2px 5px;
+}
+.executive-summary table th.executive-summary-header {
+  padding-left: 0px;
+}
+.executive-summary table td {
+  padding: 6px;
+}
+.executive-summary table tr.separator {
+  height: 5px;
+}
+.executive-summary table .print-readonly-style {
+  min-height: 66px;
+}
+.executive-summary table td.limitType {
+  width: 280px;
+  padding: 10px;
+  margin-top: 5px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  font-size: 20px;
+}
+.executive-summary table td.limitComment {
+  height: 100%;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.executive-summary table td.paddingLimitCommentTrue {
+  padding: 1px 5px 1px 0px;
+}
+.executive-summary table td.paddingLimitCommentFalse {
+  padding: 5px 5px 0px 0px;
+}
+.executive-summary table .disabled {
+  background-color: #dce1eb;
+}
+.executive-summary table .comment-left {
+  margin-left: 6px;
+}
+.executive-summary .pass,
+.executive-summary .non-detect,
+.executive-summary .non-detectpass {
+  background-color: #42C376;
+}
+.executive-summary .warning {
+  background-color: #e4ba00;
+}
+.executive-summary .fail,
+.executive-summary .kidfail,
+.executive-summary .kidchildrensfail {
+  background-color: #BA302D;
+}
+.executive-summary .groupsum,
+.executive-summary .informationonly {
+  color: black;
+  background-color: #cdd0d3;
+}
+.executive-summary .test-status {
+  text-align: left;
+  font-weight: bold;
+  color: white;
+}
+.executive-summary textarea.comment,
+.executive-summary div.comment {
+  color: black;
+  font-weight: normal;
+  height: 100%;
+  width: 100%;
+  resize: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin-left: -1px;
+}
+.executive-summary .disabledInput {
+  background-color: #dce1eb;
+}
+.ext-chrome .executive-summary td.hasTextArea {
+  padding-bottom: 3px;
+  padding-top: 9px;
+}
+@media print {
+  .executive-summary tr.print-style {
+    border: 2px solid black;
+    margin-bottom: 12px;
+  }
+}
+</style><style type="text/css">/*@light-grey: #C5C9CD;
+
+rule-builder
+{
+}*/
+.certExceptClass use {
+  fill: red !important;
+}
+</style><style type="text/css">.file-select-table__layout {
+  width: 70% !important;
+  max-width: 100em !important;
+  min-width: 50em !important;
+}
+.single-file-upload-menu__layout {
+  max-width: 30em !important;
+}
+.single-file-upload__menu .file-card-container {
+  width: 100%;
+  display: inline-table;
+}
+.single-file-upload__menu .file-card-container .file-card__block {
+  display: table-cell;
+  width: 14em;
+  text-align: center;
+  padding: 2.5em 1em 2.5em 1em;
+  background-color: #fff;
+  border: 2px dashed #d8dde6;
+  cursor: pointer;
+}
+.single-file-upload__menu .file-card-container .file-card__icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: .5em;
+}
+.single-file-upload__menu .file-card-container .file-card__separator {
+  text-align: center;
+  display: table-cell;
+  width: 3em;
+}
+.file-select-table table {
+  border-top: none;
+}
+.file-select-table table .slds-text-title--caps {
+  text-transform: uppercase;
+}
+.file-select-table table .file__name {
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  color: #0070d2;
+}
+.file-select-table table .slds-checkbox--faux {
+  cursor: pointer;
+}
+.file-select-table .file-select-table__description {
+  margin-left: 22px;
+}
+.file-select-table .file-select-table__header th {
+  border-top: none;
+}
+.file-select-table .file-select-table__header a {
+  white-space: nowrap;
+  text-decoration: none;
+  color: #54698d;
+  cursor: default;
+}
+</style><style type="text/css">.q-file-upload--dropzone-target {
+  border: 2px #cccccc dashed;
+  border-radius: 0.25rem;
+  min-height: 10rem;
+  padding-top: 0;
+  color: #cccccc;
+}
+.q-file-upload--dropzone-title-icon {
+  text-align: center;
+}
+.q-file-upload--dropzone-input-label {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  background: transparent;
+  background-clip: padding-box;
+  border: none;
+  border-radius: 4px;
+  color: #0070d2;
+  font-size: inherit;
+  line-height: 34px;
+  text-decoration: none;
+  -webkit-appearance: none;
+  white-space: normal;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: color 0.05s linear, background-color 0.05s linear;
+  transition: color 0.05s linear, background-color 0.05s linear;
+  cursor: pointer;
+}
+.q-file-upload--dropzone-input {
+  position: absolute;
+  z-index: -100;
+  height: 0.1px;
+  width: 0.1px;
+  opacity: 0.001;
+  -moz-opacity: 0.001;
+  cursor: pointer;
+}
+.q-file-upload--icix-working-file-remove {
+  color: red;
+  cursor: pointer;
+  font-weight: bold;
+}
+</style><style type="text/css">.single-file-upload .single-file-upload__header h2 {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+.multiple-file-upload .main-modal div.slds-modal__header {
+  position: relative;
+  border-top-right-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+  border-bottom: 2px none #d8dde6;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  line-height: 1rem;
+  text-align: left;
+}
+.multiple-file-upload .slds-modal__content {
+  padding-top: 0;
+}
+</style><style type="text/css">.q-file-upload-template-util .full-width {
+  width: 100%;
+}
+.slds-upload-text__overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.single-file-upload .slds-file-selector .slds-file-selector__dropzone {
+  padding: 1px;
+  border: 1px dashed #d8dde6;
+  border-radius: .25rem;
+}
+.single-file-upload .slds-file-selector .slds-has-drag-over {
+  outline: 0;
+  border-color: #1589ee;
+  box-shadow: 0 0 3px #0070D2;
+  border-style: solid;
+}
+.single-file-upload .slds-file-selector .slds-file-selector__body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.single-file-upload .slds-file-selector .slds-file-selector__button {
+  max-height: 2rem;
+  line-height: 1.625rem;
+  overflow: hidden;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  cursor: pointer;
+  min-width: 125px;
+}
+.single-file-upload .slds-file-selector .slds-file-selector__button .slds-button__icon {
+  margin-bottom: 2px;
+}
+@media (max-width: 1300px) {
+  .single-file-upload .slds-file-selector .slds-file-selector__button {
+    width: 100%;
+  }
+}
+.single-file-upload .slds-file-selector .slds-file-selector__text {
+  display: none;
+}
+@media (min-width: 1300px) {
+  .single-file-upload .slds-file-selector .slds-file-selector__text {
+    display: block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    width: 40%;
+    text-align: center;
+  }
+}
+.single-file-upload .uploaded-file-wrapper {
+  min-height: 36px;
+}
+.single-file-upload .uploaded-file-wrapper.editable {
+  border-bottom: 1px solid #d8dde6;
+  padding-top: 7px;
+}
+.uploaded-file__title {
+  max-width: 90%;
+  word-wrap: break-word;
+}
+</style><style type="text/css">.relationship-attributes .slds-picklist {
+  margin-top: 0 !important;
+}
+.relationship-attributes .slds-pill_container--bare {
+  border: 0;
+  border-radius: 0;
+}
+.relationship-attributes .slds-section.slds-is-open .slds-section__content {
+  padding-top: 8px;
+}
+.relationship-attributes .slds-section__title-action {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  text-transform: uppercase;
+  color: #16325C;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
+  padding: 0 .5rem;
+}
+.relationship-attributes .slds-modal__container {
+  height: 100% !important;
+  padding: 48px 0 !important;
+}
+.relationship-attributes .filters-container .slds-button-group {
+  display: inline-flex;
+  text-align: initial;
+}
+.relationship-attributes .filters-container .slds-lookup {
+  width: 240px;
+  display: inline-flex;
+}
+.relationship-attributes .filters-container .slds-lookup .slds-form-element {
+  width: 100%;
+}
+.relationship-attributes .filters-container .slds-lookup .slds-lookup__menu.auto {
+  width: 100%;
+}
+.relationship-attributes .filters-container .slds-lookup .slds-pill_container {
+  text-align: left;
+}
+.relationship-attributes .filters-container .slds-lookup .slds-input {
+  line-height: 33px;
+}
+.relationship-attributes .slds-lookup__item-action {
+  font-size: .8125rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: .25rem .5rem;
+  color: #16325c;
+  text-align: left;
+  width: 100%;
+  line-height: 1.5;
+  border-radius: 0;
+}
+.relationship-attributes .slds-lookup__item-action:hover {
+  outline: 0;
+  cursor: pointer;
+  background-color: #f4f6f9;
+  color: #16325c;
+  text-decoration: none;
+}
+.relationship-attributes .slds-picklist--draggable .slds-picklist__options span.slds-truncate {
+  max-width: 100%;
+}
+.relationship-attributes .group-indent {
+  padding-left: 51px !important;
+}
+.relationship-attributes .slds-section__content {
+  transition: all .5s linear;
+}
+@media (min-width: 48em) {
+  .relationship-attributes .slds-modal__container {
+    margin: 0 auto;
+    width: 50% !important;
+    max-width: 640px !important;
+    min-width: 320px !important;
+  }
+  .relationship-attributes .slds-modal__container.multipicklistModal {
+    min-width: 715px !important;
+    max-width: 715px !important;
+  }
+}
+</style><style type="text/css">.slds-popover.slds-popover--tooltip.slds-desc-bubble {
+  background-color: #3d9cd6;
+  position: absolute;
+  border-radius: 4px;
+  z-index: 99;
+  top: 0px;
+  left: 30px;
+  display: inline-block;
+  width: 300px;
+}
+</style><style type="text/css">slds-datepicker {
+  display: block;
+  color: #16325c;
+}
+slds-datepicker .month {
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+}
+slds-datepicker .date-error-message {
+  color: red;
+  font-weight: 400;
+}
+slds-datepicker .slds-is-today &gt; .slds-day,
+slds-datepicker .slds-is-selected &gt; .slds-day {
+  font-weight: bold;
+}
+slds-datepicker .print-readonly-style {
+  background-color: #e0e5ee;
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: #a8b7c7;
+  padding: 6px;
+  min-height: 34px;
+}
+slds-datepicker .slds-input-has-icon--right .print-readonly-style {
+  min-width: 150px;
+  padding-right: 34px;
+}
+/* if calendar inside slds-table: keep original cell padding */
+.slds-table slds-datepicker table.datepicker__month tr td,
+.slds-table slds-datepicker table.datepicker__month tr th,
+.slds-table slds-datepicker table.datepicker__month tr td:first-child,
+.slds-table slds-datepicker table.datepicker__month tr th:first-child,
+.slds-table slds-datepicker table.datepicker__month tr td:last-child,
+.slds-table slds-datepicker table.datepicker__month tr th:last-child {
+  padding: 4px;
+}
+.slds-modal__container {
+  transform: none !important;
+  -webkit-transform: none !important;
+  -o-transform: none !important;
+  -moz-transform: none !important;
+}
+</style><style type="text/css">slds-timeframe-picker {
+  display: block;
+}
+slds-timeframe-picker .month {
+  display: inline-block;
+  width: 60px;
+  text-align: center;
+}
+slds-timeframe-picker .date-error-message {
+  color: red;
+  font-weight: 400;
+  margin-left: 10px;
+}
+slds-timeframe-picker .slds-is-today &gt; .slds-day,
+slds-timeframe-picker .slds-is-selected &gt; .slds-day {
+  font-weight: bold;
+}
+slds-timeframe-picker .alldate {
+  padding: 5px 13px 14px;
+}
+slds-timeframe-picker .alldate a.allcheck {
+  display: block;
+  color: #54698d;
+  text-decoration: none;
+}
+slds-timeframe-picker .alldate a.allcheck:focus,
+slds-timeframe-picker .alldate a.allcheck:hover {
+  outline: none;
+  border: 0px;
+  text-decoration: none;
+}
+slds-timeframe-picker .alldate a.allcheck .checkbox-div {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #d8dde6;
+  border-radius: 0.125rem;
+  display: inline-block;
+  height: 1rem;
+  position: relative;
+  transition: border 0.1s linear 0s, background-color 0.1s linear 0s;
+  vertical-align: middle;
+  width: 1rem;
+  margin-right: 0.5rem;
+}
+slds-timeframe-picker .alldate a.allcheck .checkbox-div.active:after {
+  border-bottom: 2px solid #1589ee;
+  border-left: 2px solid #1589ee;
+  content: "";
+  display: block;
+  height: 0.25rem;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0px) rotate(-45deg);
+  width: 0.5rem;
+}
+slds-timeframe-picker .alldate a.allcheck span {
+  line-height: 1.5;
+  display: inline-block;
+}
+slds-timeframe-picker .tabcontent {
+  min-height: 278px;
+}
+slds-timeframe-picker .tabcontent .slds-form-element__control.with-radio {
+  padding: 5px 15px;
+}
+slds-timeframe-picker .tabcontent .slds-form-element__control.with-radio .slds-radio {
+  padding: 5px;
+}
+slds-timeframe-picker .slds-dropdown-trigger {
+  width: 100%;
+}
+/* if calendar inside slds-table: keep original cell padding */
+.slds-table slds-timeframe-picker table.datepicker__month tr td,
+.slds-table slds-timeframe-picker table.datepicker__month tr th,
+.slds-table slds-timeframe-picker table.datepicker__month tr td:first-child,
+.slds-table slds-timeframe-picker table.datepicker__month tr th:first-child,
+.slds-table slds-timeframe-picker table.datepicker__month tr td:last-child,
+.slds-table slds-timeframe-picker table.datepicker__month tr th:last-child {
+  padding: 4px;
+}
+.slds-modal__container {
+  transform: none !important;
+  -webkit-transform: none !important;
+  -o-transform: none !important;
+  -moz-transform: none !important;
+}
+.slds-radio [type="radio"]:checked + .slds-radio--faux::after,
+.slds-radio [type="radio"]:checked + .slds-radio__label .slds-radio--faux::after,
+.slds-radio [type="radio"]:checked ~ .slds-radio--faux::after {
+  background: #1589ee none repeat scroll 0 0;
+  border-radius: 50%;
+  content: "";
+  height: 0.5rem;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0px);
+  width: 0.5rem;
+}
+.slds-radio [type="radio"]:checked + .slds-radio--faux,
+.slds-radio [type="radio"]:checked + .slds-radio__label .slds-radio--faux,
+.slds-radio [type="radio"]:checked ~ .slds-radio--faux {
+  background: #fff none repeat scroll 0 0;
+}
+.pageloader {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
+}
+</style><style type="text/css">.slds-lookup .clickable {
+  cursor: pointer;
+}
+.slds-lookup .wrap-class {
+  word-break: break-all;
+}
+.slds-lookup .slds-lookup__menu.auto,
+.slds-lookup .slds-dropdown.auto {
+  display: block;
+  width: 100% !important;
+  min-width: 240px;
+}
+.slds-lookup .lookup-icon {
+  min-width: 1.25rem;
+}
+.slds-lookup .sub-items {
+  font-size: 12px;
+}
+.slds-lookup .sub-items .sub-item-count {
+  color: #005fb2;
+  font-weight: bold;
+}
+.slds-lookup .sub-items .sub-item {
+  color: #grey;
+  font-weight: bold;
+}
+.slds-lookup .slds-pill__container.slds-pill__container--flex {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.slds-lookup .slds-pill__container .slds-pill {
+  color: #0070d2;
+}
+.slds-lookup .slds-pill__container .slds-pill__label {
+  display: inline-block;
+}
+.slds-lookup .slds-pill__container .slds-pill.slds-pill-wrapped {
+  margin: 2px 2px 0 0;
+}
+.slds-lookup .slds-pill__container.noline {
+  padding: 1px;
+  border: transparent !important;
+}
+.slds-lookup .stretch {
+  max-width: 400px;
+}
+.slds-lookup .stretch .slds-pill__label.has-icon {
+  max-width: 80%;
+}
+.slds-lookup .stretch .slds-pill__label {
+  max-width: 90%;
+}
+.slds-lookup .slds-picklist li.slds-is-selected .slds-icon--selected {
+  fill: #0070d2;
+  opacity: 1;
+}
+.slds-lookup .slds-picklist li .slds-icon--selected {
+  opacity: 0;
+  transition: opacity 50ms ease;
+}
+.slds-lookup .slds-lookup__item-action--label .slds-icon {
+  margin-left: .25rem;
+  margin-right: .75rem;
+}
+.slds-lookup .slds-lookup__item-action .slds-icon {
+  margin-right: .5rem;
+  margin-top: .25rem;
+}
+.slds-lookup .slds-lookup__item-action {
+  font-size: .8125rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: .25rem 1rem;
+  color: #16325c;
+  text-align: left;
+  width: 100%;
+  line-height: 1.5;
+  border-radius: 0;
+}
+.slds-lookup .slds-lookup__item-action.slds-has-focus,
+.slds-lookup .slds-lookup__item-action:focus,
+.slds-lookup .slds-lookup__item-action:hover {
+  outline: 0;
+  cursor: pointer;
+  background-color: #f4f6f9;
+  color: #16325c;
+  text-decoration: none;
+}
+.slds-lookup .slds-lookup__item-action .slds-icon {
+  margin-right: .5rem;
+  margin-top: .25rem;
+}
+.slds-lookup .slds-lookup__item-action--label {
+  padding: .5rem 1rem;
+}
+.slds-lookup .slds-lookup__item-action--label .slds-icon {
+  margin-left: .25rem;
+  margin-right: .75rem;
+}
+.slds-lookup .slds-list--horizontal {
+  display: flex;
+  flex-wrap: wrap;
+}
+body &gt; div.slds-lookup__menu.auto {
+  z-index: 9003;
+}
+</style><style type="text/css">.icon-div {
+  float: left;
+  margin-right: 15px;
+}
+.icon-div &gt; img {
+  padding: 5px;
+  border-radius: 3px;
+}
+.text-content {
+  overflow: hidden;
+}
+slds-header .slds-text-heading--label {
+  line-height: 10px;
+}
+slds-header .slds-text-heading--medium {
+  line-height: 30px;
+}
+slds-header .text-content.text-content--v-align {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+slds-header .request-status-text {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+slds-header .request-status-text--pass {
+  color: #5BD185;
+}
+slds-header .request-status-text--fail {
+  color: #C23934;
+}
+slds-header .slds-text-body--strong {
+  font-weight: bold;
+}
+slds-header .right-side-subtitle .inner-subtitle {
+  font-size: 14px;
+}
+.slds-page-header__title {
+  font-weight: 400 !important;
+  margin-top: 2px !important;
+}
+@media (min-width: 48em) {
+  .slds-page-header__title {
+    font-size: 1.25rem !important;
+  }
+}
+</style><style type="text/css"></style><style type="text/css">slds-table .slds-table td.col-force-wrap,
+slds-table .slds-table th.col-force-wrap {
+  word-wrap: break-word;
+  white-space: normal;
+}
+slds-table .slds-table .slds-truncate {
+  max-width: 100% !important;
+}
+slds-table table.fixed-table-layout {
+  table-layout: fixed;
+}
+slds-table .slds-table--bordered:not(.slds-no-row-hover) tr:hover &gt; td,
+slds-table .slds-table--bordered:not(.slds-no-row-hover) tr:hover &gt; th {
+  box-shadow: none;
+}
+slds-table .slds-table--bordered.no-border-outside {
+  border-top: none;
+  border-bottom: none;
+}
+slds-table .slds-dropdown-trigger .slds-dropdown ul li {
+  text-align: left;
+}
+slds-table .slds-is-sortable,
+slds-table .clickable {
+  cursor: pointer;
+}
+slds-table tr.slds-text-heading--label.notransform {
+  text-transform: inherit;
+}
+slds-table tr.slds-text-heading--label.notransform th {
+  padding-bottom: 2px;
+}
+slds-table tr.vertical-align--top td,
+slds-table td.vertical-align--top,
+slds-table th.vertical-align--top {
+  vertical-align: top;
+}
+slds-table tr.vertical-align--middle td,
+slds-table td.vertical-align--middle,
+slds-table th.vertical-align--middle {
+  vertical-align: middle !important;
+}
+slds-table tr.vertical-align--bottom,
+slds-table td.vertical-align--bottom,
+slds-table th.vertical-align--bottom {
+  vertical-align: bottom !important;
+}
+slds-table td.truncate-upload-cell {
+  width: 17%;
+  white-space: nowrap;
+}
+slds-table tr.vertical-align--top td.slds-row-action {
+  padding-top: 12px;
+}
+slds-table tr.vertical-align--top input[type=checkbox] {
+  margin-top: 10px;
+}
+slds-table input.slds-input[type=number] {
+  text-align: right;
+  padding-right: 0;
+}
+slds-table .posr,
+slds-table .relative {
+  position: relative;
+}
+slds-table td.wrap-text {
+  white-space: normal;
+}
+slds-table td.wrap-text &gt; span {
+  white-space: pre-line;
+}
+slds-table .slds-file-selector__dropzone.ng-invalid,
+slds-table label.slds-radio .slds-radio--faux.ng-invalid {
+  background-color: #fff;
+  border-color: #c23934 !important;
+  box-shadow: #c23934 0 0 0 1px inset;
+  background-clip: padding-box;
+}
+slds-table table.slds-table.transparent {
+  background-color: inherit;
+}
+slds-table table.slds-table.transparent td.read-only {
+  border-bottom: 1px solid #d8dde6;
+}
+slds-table table.slds-table.alternate tr.odd {
+  background-color: #f9f9f9;
+}
+slds-table table.slds-table .slds-select,
+slds-table table.slds-table .slds-input {
+  min-width: 90px;
+}
+slds-table .slds-table--bordered:not(.slds-no-row-hover) tbody tr:hover &gt; td,
+slds-table .slds-table--bordered:not(.slds-no-row-hover) tbody tr:hover &gt; th {
+  box-shadow: none;
+}
+slds-table .slds-dropdown-trigger .slds-dropdown ul li {
+  text-align: left;
+}
+slds-table td.slds-table__cell {
+  position: initial;
+}
+slds-table .wrap {
+  word-wrap: break-word;
+}
+slds-table .table-scroll-x {
+  overflow-x: scroll;
+}
+slds-table .table-scroll-y {
+  overflow-y: scroll;
+  max-height: inherit;
+}
+slds-table .v-align-middle {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+slds-table .inlineBlock,
+slds-table .inline-block {
+  display: inline-block;
+}
+slds-table .table-button {
+  padding: 2px !important;
+}
+.borderColor {
+  border-color: green !important;
+}
+.borderColor input[type="text"],
+.borderColor .slds-pill_container,
+.borderColor .slds-checkbox--faux,
+.borderColor .slds-radio--faux,
+.borderColor .slds-select,
+.borderColor .slds-input,
+.borderColor .slds-textarea {
+  border-color: green !important;
+}
+</style><style type="text/css">.slds-notify_container.bottom {
+  top: auto !important;
+  bottom: 50px;
+}
+.slds-notify_container.center,
+.slds-notify_container.middle {
+  top: 45% !important;
+}
+.slds-notify_container .pre-text {
+  white-space: pre-line;
+}
+</style><style type="text/css">.slds-notification-container {
+  position: fixed;
+  display: block;
+  width: 20.5rem;
+  right: 0.25rem;
+  top: 0.25rem;
+  padding: 0.25rem 0.25rem 0.5rem;
+  z-index: 8500;
+}
+.slds-notification {
+  position: relative;
+  width: 20rem;
+  border: 1px solid #ecebea;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  transition-property: margin, max-height, opacity, top;
+}
+.slds-media {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.slds-notification .slds-media__body {
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.slds-notification + .slds-notification {
+  margin-top: 0.5rem;
+}
+.slds-notification:nth-of-type(1) {
+  z-index: 4;
+}
+.slds-notification:nth-of-type(2) {
+  z-index: 3;
+}
+.slds-notification:nth-of-type(3) {
+  z-index: 2;
+}
+.slds-notification:nth-of-type(4) {
+  z-index: 1;
+}
+.slds-notification:nth-of-type(n+3) {
+  overflow: hidden;
+}
+.slds-notification:nth-of-type(n+4) {
+  margin-top: 0;
+  transform: scaleX(0.95) translateY(-90%);
+}
+.slds-notification:nth-of-type(n+4) .slds-media__body,
+.slds-notification:nth-of-type(n+5) {
+  opacity: 0;
+}
+.slds-notification:nth-of-type(n+6) {
+  display: none;
+}
+.slds-notification__target {
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background-color: #f4f6f9;
+  color: #3e3e3c !important;
+}
+.slds-notification__target:hover,
+.slds-notification__target:focus {
+  background-color: white;
+  text-decoration: none;
+}
+.slds-notification__footer {
+  padding: 0.75rem 0.75rem 1rem 0.75rem;
+}
+.slds-notification__close {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+}
+.slds-button--icon-container {
+  background-color: #d8edff;
+  border-color: #0070d2;
+  color: white;
+}
+</style><style type="text/css">.slds-checkbox [type="checkbox"][disabled] + .slds-checkbox--faux:after,
+.slds-checkbox [type="checkbox"][disabled] ~ .slds-checkbox--faux:after {
+  border-color: #888 !important;
+}
+.slds-checkbox .clickable {
+  cursor: pointer;
+}
+@media print {
+  .slds-checkbox [type="checkbox"][disabled] + .slds-checkbox--faux:after,
+  .slds-checkbox [type="checkbox"][disabled] ~ .slds-checkbox--faux:after {
+    border-color: black !important;
+  }
+  .slds-checkbox .slds-checkbox--faux {
+    text-align: center;
+    font-size: 8pt;
+  }
+}
+</style><style type="text/css">stencil-image .stencil {
+  position: fixed;
+  top: 125px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 125px);
+  z-index: 1;
+}
+stencil-image .stencil.high-index {
+  z-index: 9999;
+}
+stencil-image .stencil .slds-spinner_container {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+stencil-image .stencil .content-section {
+  background-color: #fff;
+  position: relative;
+  height: 100%;
+}
+stencil-image .stencil .content-section .task-section {
+  margin-top: 0;
+  padding-top: 0;
+}
+stencil-image .stencil .content-section .task-section .task-right {
+  top: 0;
+}
+stencil-image .stencil .content-section.back-opaque:before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&amp;0+0,1+100 */
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=0);
+  /* IE6-9 */
+}
+stencil-image .stencil .content-section .table {
+  display: table;
+  width: 100%;
+}
+stencil-image .stencil .content-section .table .table-row {
+  display: table-row;
+}
+stencil-image .stencil .content-section .table .table-row.align-middel-center .table-cell {
+  vertical-align: middle;
+  text-align: center;
+}
+stencil-image .stencil .content-section .table .table-row .table-cell {
+  display: table-cell;
+  height: 43px;
+  padding: 10px;
+  border-bottom: 1px solid #DFE3EA;
+  min-width: 100px;
+}
+stencil-image .stencil .content-section .table .table-row .table-cell.background-mask:before {
+  left: 15px;
+  max-width: 90%;
+}
+stencil-image .stencil .content-section .table .table-row .table-cell:first-child {
+  width: 36%;
+}
+stencil-image .stencil .content-section .table .table-row .table-cell.table-head {
+  height: 33px;
+}
+stencil-image .stencil .content-section .table .table-row .table-cell.table-head.background-mask:before {
+  height: 4px;
+}
+stencil-image .stencil .content-section .input {
+  background-color: #F4F6F9;
+  border-radius: 3px;
+  height: 36px;
+}
+stencil-image .stencil .content-section .textarea {
+  background-color: #F4F6F9;
+  border-radius: 3px;
+  height: 136px;
+}
+stencil-image .stencil .content-section .select {
+  background-color: #F4F6F9;
+  border-radius: 3px;
+  height: 36px;
+  max-width: 350px;
+}
+stencil-image .stencil .content-section label {
+  min-height: 20px;
+  display: block;
+  max-width: 240px;
+  width: 100%;
+}
+stencil-image .stencil .content-section label.heading {
+  max-width: 100px;
+}
+stencil-image .stencil .content-section .checkbox {
+  position: relative;
+  padding-left: 24px;
+}
+stencil-image .stencil .content-section .checkbox:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  display: block;
+  height: 18px;
+  background-color: #F4F6F9;
+  border-radius: 3px;
+}
+stencil-image .stencil .content-section .radio {
+  position: relative;
+  padding-left: 24px;
+}
+stencil-image .stencil .content-section .radio:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  display: block;
+  height: 18px;
+  background-color: #F4F6F9;
+  border-radius: 3px;
+  border-radius: 50%;
+}
+stencil-image .stencil .content-section .tab-section {
+  border: 1px solid #D7DCE5;
+  border-radius: 3px;
+  margin-top: 4px;
+  min-height: 156px;
+}
+stencil-image .stencil .content-section .tab-section .slds-tabs--scoped__content {
+  width: 100%;
+  float: left;
+  border: 0;
+}
+stencil-image .stencil .content-section .tab-section .slds-tabs--scoped__content .checkbox {
+  margin-bottom: 5px;
+}
+stencil-image .stencil .content-section .tab-section.noborder {
+  border: 0px;
+}
+stencil-image .stencil .content-section .tab-section ul.tablist {
+  border-bottom: 1px solid #D7DCE5;
+}
+stencil-image .stencil .content-section .tab-section ul.tablist li {
+  display: inline-block;
+  height: 40px;
+  padding: 0 17px;
+  width: 19%;
+}
+stencil-image .stencil .content-section .tab-section ul.tablist li label {
+  height: 41px;
+  display: block;
+}
+stencil-image .stencil .content-section .tab-section.full-height {
+  height: 700px;
+}
+stencil-image .stencil .content-section button {
+  background-color: #E0E4ED;
+  height: 37px;
+  width: 90px;
+  display: block;
+  margin-right: 3px;
+  border: 0;
+  border-radius: 3px;
+}
+stencil-image .stencil .content-section button[type=reset] {
+  background-color: #F0F2F6;
+}
+stencil-image .stencil .content-section .partner-deck .partner-cards-wrap {
+  float: left;
+}
+stencil-image .stencil .content-section .partner-deck .partner-cards-wrap .partner-card {
+  width: 235px;
+  margin: 0 8px 16px;
+  height: 193px;
+  border-radius: 4px;
+  background-color: #f4f6f9;
+  border: 1px solid #d8dde6;
+}
+stencil-image .stencil .content-section .partner-deck .partner-cards-wrap .partner-card:first-child {
+  margin-left: 0;
+}
+stencil-image .stencil .background-mask {
+  position: relative;
+}
+stencil-image .stencil .background-mask:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 8px;
+  width: 100%;
+  border-radius: 4px;
+  background-color: #DFE3EA;
+}
+stencil-image .stencil .background-mask.contents:before {
+  height: 3px;
+}
+</style><style type="text/css">button.slds-button.svg-button.with-loader {
+  width: 68px;
+  height: 36px;
+  text-align: center;
+}
+button.slds-button.svg-button.with-loader span.loading {
+  display: inline-block;
+  opacity: 1;
+  visibility: visible;
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+button.slds-button.svg-button.link-button {
+  padding: 0;
+}
+button.slds-button.svg-button.link-button a {
+  display: block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+button.slds-button.svg-button.slds-button--brand a {
+  color: white;
+}
+button.slds-button.svg-button.slds-button--brand[disabled] {
+  background-color: #898C8E;
+}
+button.slds-button.svg-button.small-button {
+  font-size: 10px;
+  font-weight: bold;
+  padding-left: 4px;
+  padding-right: 4px;
+  line-height: 2;
+  white-space: nowrap;
+  overflow: hidden;
+}
+@-ms-keyframes spin {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style><style type="text/css"></style><style type="text/css">.slds-page-header .icon-div {
+  background-color: #64bdf4;
+}
+.slds-title-heading {
+  font-size: 10px;
+  color: #999999;
+}
+.slds .slds-tree__item a {
+  color: #0070d2;
+}
+.right {
+  overflow-y: scroll;
+  width: 500px;
+}
+.slds table {
+  border-collapse: unset;
+}
+.CellComment {
+  width: auto !impprtant;
+  min-width: 60px !important;
+  max-width: 500px !important;
+  margin-top: 10px !important;
+}
+.change-field {
+  color: #ef8d22;
+}
+.change-green {
+  color: green;
+}
+.change-orange {
+  color: orange;
+}
+.change-red {
+  color: red;
+}
+button:focus {
+  outline: 0;
+}
+.slds slds-table td {
+  padding: 5px !important;
+}
+.no-chevron {
+  padding-left: 2px;
+}
+#container1 {
+  float: left;
+  width: 22%;
+  max-height: 550px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+#container2 {
+  width: 78%;
+  max-height: 550px;
+  overflow: auto;
+}
+.checkboxHighlight {
+  background: #ef8d22;
+  box-shadow: inset 1px 1px 2px #ef8d22, 1px 1px 1px #ef8d22;
+}
+</style><script src="/resource/1544435284000/icix_v1__products/bundle.js" type="text/javascript"></script><style type="text/css">.main-container {
+  overflow-x: hidden;
+  /* Let's get this party started */
+  /* Track */
+  /* Handle */
+}
+.main-container ::-webkit-scrollbar {
+  width: 12px;
+}
+.main-container ::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(228, 228, 228, 0.3);
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+.main-container ::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: rgba(193, 193, 193, 0.24);
+  -webkit-box-shadow: inset 0 0 6px rgba(150, 148, 148, 0.52);
+}
+.main-container ::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(118, 118, 118, 0.8);
+}
+.main-container :focus {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+</style><style type="text/css">p.slds-form-element__label {
+  font-size: 14px !important;
+}
+.mutiselect-producttest multi-select {
+  margin-left: 0;
+}
+.mutiselect-producttest multi-select .slds-picklist--draggable {
+  float: left;
+}
+.mutiselect-producttest multi-select .slds-picklist--draggable .slds-grid--vertical::last-child {
+  display: none;
+}
+.mutiselect-producttest multi-select .slds-picklist__options.slds-picklist__options--multi {
+  padding: 0;
+}
+.mutiselect-producttest multi-select .slds-picklist__options.slds-picklist__options--multi .slds-picklist__item.slds-is-selected span {
+  background-color: #037BD8;
+  color: #fff;
+}
+.mutiselect-producttest multi-select .slds-picklist.slds-picklist--multi {
+  margin-top: 3px;
+}
+.mutiselect-producttest .product-property {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  float: left;
+  height: 240px;
+  margin-top: 58px;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+  overflow: auto;
+  padding: 4px 5px;
+  width: 300px;
+}
+.mutiselect-producttest .product-property label {
+  position: relative;
+  margin-bottom: 5px;
+}
+.mutiselect-producttest .product-property label .slds-checkbox--faux {
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+.mutiselect-producttest .product-property label .slds-form-element__label {
+  display: inline-block;
+  line-height: 16px;
+  margin-top: 2px;
+  padding-left: 23px;
+}
+.slds-popover {
+  bottom: calc(120%) !important;
+  max-width: 400px !important;
+}
+.slds-popover .slds-popover__body {
+  text-align: left;
+}
+</style><script src="/resource/1517979824000/icix_v1__upload_js" type="text/javascript"></script><script src="/jslibrary/1543986924000/sfdc/main.js" type="text/javascript"></script><script src="/jslibrary/jslabels/1545327730000/en_US.js" type="text/javascript"></script><link class="user" href="/apexpages/slds/latest/assets/styles/salesforce-lightning-design-system-vf.min.css" rel="stylesheet" type="text/css" /><link class="user" href="/resource/1514184177000/icix_v1__upload_css" rel="stylesheet" type="text/css" /><script>(function(UITheme) {
+    UITheme.getUITheme = function() { 
+        return UserContext.uiTheme;
+    };
+}(window.UITheme = window.UITheme || {}));</script><script type="text/javascript">
+Visualforce.remoting.Manager.add(new $VFRM.RemotingProviderImpl({"vf":{"vid":"0661I000003Yxts","xhr":false,"dev":false,"tst":false,"dbg":false,"tm":1545824839220,"isdtp":"p1","ovrprm":true},"actions":{"ICIX_V1.FindProductController":{"ms":[{"name":"fetchLibraryID","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpCYSxvQjJmQmJBVmVJMURWeWJCSUduSldWLFlUUmtNVGt5"},{"name":"getUPRelationshipData","len":1,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpCYSxyUE1zQm5heldPNDJPZEpiLS02blRJLFlqaGlNV0kw"},{"name":"getUbeData","len":1,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpCYSxxSlZTbmp3bDZtWlNDaDNEN1pGRG1hLFltWTJZalk0"},{"name":"productSearch","len":4,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpCYSxSMHZma092SFQ1Nlg0cDBuaXBrb2F6LE9EZ3haVE5p"},{"name":"relatedAccountList","len":1,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpCYSwyZ3c1WUpNR3FocDFwbzdUWWV4TXlxLFltVmxNVFF4"},{"name":"saveRelationship","len":10,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpKYSxOUTQ0QkNNeHBjaDV5Q2RnMXM1VHpELFpUWmpaREV5"},{"name":"tradingPartnerSearch","len":1,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpKYSxObXhRQkpPUk1la3pPT2dXQXBDM3NyLE1EQmpZVEky"}],"prm":0},"ICIX_V1.RelationshipUtil":{"ms":[{"name":"addNewTag","len":2,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpKYSwzUDktdGFmN1VGM1Z0WlZZTmpIT2owLE5UVmhNV1Jo"},{"name":"cancelButtonActionForTags","len":3,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpOYSxFNU4tN0NIWFRONEgwam16LXEtZFRsLFltRmlaak13"},{"name":"checkIfCurrentUserIsAdmin","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpOYSx1Tm8wdXFhejNPSVk3YTIwM09NcGhtLE0yWmpOak5t"},{"name":"deleteRelationshipAttributes","len":1,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpOYSxzdk10TzFiU2xkaWFwaUJsY2JRZXQ3LFpHVTBaV1Ey"},{"name":"deleteRelationshipAttributesOnCancel","len":1,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpOYSw3SEFEQnBxUGxIYkRISWVhT1JQaHJPLE1EWXdNakZo"},{"name":"getAnyRelationshipAttribute","len":1,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpOYSxDZ2h3cnJHSXNfSGgxUmRnYm1iWFc2LE1UUXlZbVUx"},{"name":"getAttributesGroups","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpOYSxaalo1TU8wU093NUpmOV9MVFM5Z21oLFpXUmtNMk0z"},{"name":"getAttributes","len":2,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpOYSxrT3doR3VwcTA5Rm5pb2kzUUxoaE9OLFltSTRNVE0z"},{"name":"getAvailableUPRelationshipTypes","len":3,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpOYSw4UE5zNUJlSDV3UU5ZcUpXdE9RdkxELE4yTmlOamN5"},{"name":"getCountryList","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpOYSxwWHpDN2tVLXJoNlpNV1lrbmRWMFdXLFltVmlOR1F3"},{"name":"getGroupAttributes","len":2,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpOYSxRTTlDVk5wYXk4UWtEd1cwZmNIZmM2LE1UZG1ORGcw"},{"name":"getImageUrlFromDistriButionContentId","len":1,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpOYSxhaTk1Qks2bzJNNjVsMWZxbXBiM1ZpLFkyWm1aV0pp"},{"name":"getKeyPrefix","len":1,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpOYSxIdFdqSHJ1cWxNNzVTRXFzekVZNzRWLE16ZGtPV1kz"},{"name":"getPPRelationshipAttributes","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpSYSwzdWlIa1pZa3dWaWhBWDFmSnE4cFRvLFpUQTBaV1V3"},{"name":"getPPRelationshipStatuses","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpSYSxEQzluN1NYblJnd1BJYmVlZXlYRW5yLE1UaGlZelk1"},{"name":"getPPRelationshipTags","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpSYSx0czVLN21aWUhfWTBBN3phVW5aUmZ0LE1XTXdZelF5"},{"name":"getPPRelationshipTypes","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpSYSxVZnVtX2JZZk9XWW5tRlRfa0xKZ24tLFptTXlNMlJo"},{"name":"getProductByUniversalIds","len":1,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpSYSxsblVlSGdUT25OR1JfQUYyOUVSUk54LFkyWmtaREl6"},{"name":"getProductIXNId","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpSYSxLNDdsRlB5QVg4RUpxM3gxTGFNaFpmLFlUVmtZamsx"},{"name":"getProductUniversalIds","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpSYSx6X2xEb0hnUFo1dHl4Y0VwckpROGlLLE56TTNNVEF3"},{"name":"getStateList","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpSYSxlYTNiMmJFZFB4amw2dnEwSklqalczLE0yRXhNR0l4"},{"name":"getUPRelationshipAttributesList","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpSYSx0VWJBT3lSejAwTzh3bjREVkpNcjN3LFlURTVZVFEy"},{"name":"getUPRelationshipIdTypes","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpSYSxMbWhVSE5PUjJ2TXhxX1hlMkJMVHlMLE9XRXlOV0Zs"},{"name":"getUPRelationshipPermissionsAvalable1","len":4,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpSYSxzeVhDM1VRejNOd0h6SmlhT2VkN2IzLFpHVTRZelpr"},{"name":"getUPRelationshipPermissionsSelected1","len":4,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpSYSxkUk5vZHl1NWdCclF3NXV6Zlhjb2hlLE1HRXdNREkx"},{"name":"getUPRelationshipProductTestLevels","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpSYSxxa0ZUOF9LbFFMWkhEQnNpMGlYel90LE1EZzVZVGN3"},{"name":"getUPRelationshipStatuses","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpSYSxmc3lBTFBoYTg1cWEybmJ4aVlhX0VwLE1XWXpNakl4"},{"name":"getUPRelationshipTags","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpWYSxRWllLS1FzaXlRcGlDTUhiR0tmdHdILFpUWTNNVFEw"},{"name":"getUPRelationshipTestingProgramsAvalable","len":4,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpWYSxUVE9zZDZtbXpILUVUOHBQUkhjNkxZLE5HVTJNalps"},{"name":"getUPRelationshipTestingProgramsSelected","len":4,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpWYSxqbEk0Vml0cjVFb2xVdnJiRGdKbHBZLFlqVTNOVFk1"},{"name":"getUPRelationshipTypes","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpWYSxmdlpZTHhYX1hxeUQ1dlpfRU8tTkg0LE5ERTBaREV6"},{"name":"getUURelationshipIdTypes","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpWYSxGeE9vaGZLcGZPQ3pzZGVlZjBOUmdPLE1EVTFNV1Jt"},{"name":"getUURelationshipStatuses","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpWYSxHNlc1Q1U0S2NxQkd2MElxSUMwaktvLE0yTm1OV1po"},{"name":"getUURelationshipTags","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpWYSx3Nkp0X3VtVFNhR1A1V1dMdmtrMHB1LE9UY3daV1l3"},{"name":"getUURelationshipTypes","len":0,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpWYSx5enBaRXBlRTZtbmJvSDJIdGhuRUQ5LE1UQmpZVGc0"},{"name":"insertRelationshipAttributesTags","len":2,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpWYSxUZmc1Q2d0N20wcWlsUXk5OFlwOEVrLE1XVXdabVJr"},{"name":"tradingPartnersConnectedWithCurrentUser","len":1,"ns":"ICIX_V1","ver":36.0,"csrf":"VmpFPSxNakF4T0MweE1pMHlPVlF4TVRvME56b3hPUzR5TWpWYSxlb3g1Uk1CSlk2anFXaWZWT3F2Mm9BLFlUWmpNalpo"}],"prm":0}},"service":"apexremote"}));
+</script><meta http-equiv="PRAGMA" content="NO-CACHE" />
+<meta http-equiv="Expires" content="Mon, 01 Jan 1990 12:00:00 GMT" />
+
+  <title>Product Search</title>
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible" /></head><body class="slds-scope  ext-webkit ext-chrome" ng-app="app"><span id="j_id0:j_id2">
+
+<script type="text/javascript">
+var sf_design_system = {
+    assetsDir:"/apexpages/slds/latest/assets/",
+    iconsDir: "/apexpages/slds/latest/assets/icons/",
+    customIconsDir: "/resource/1544435284000/icix_v1__customiconimages",
+    imageDir: "/apexpages/slds/latest/assets/images/",
+    symbols:  "/apexpages/slds/latest/assets/icons/action-sprite/svg/symbols.svg",
+    action:   "/apexpages/slds/latest/assets/icons/action-sprite/svg/symbols.svg",
+    custom:   "/apexpages/slds/latest/assets/icons/custom-sprite/svg/symbols.svg",
+    doctype:  "/apexpages/slds/latest/assets/icons/doctype-sprite/svg/symbols.svg",
+    standard: "/apexpages/slds/latest/assets/icons/standard-sprite/svg/symbols.svg",
+    utility:  "/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg"
+};
+
+//decode JSON object encoded with JSENCODE
+function jsonDecode(obj)
+{
+    if(window.angular)
+        return angular.fromJson(obj);
+    return JSON.parse(decodeURI(obj));
+}
+</script></span><span id="j_id0:j_id6">
+    <script>
+        window.relationshipUtilMapper  = {
+            remoteActions: {
+                getProductUniversalIds:                         'ICIX_V1.RelationshipUtil.getProductUniversalIds',
+                getUPRelationshipNonUniversalIds:               'ICIX_V1.RelationshipUtil.getUPRelationshipIdTypes',
+                getUPRelationshipAttributes:                    'ICIX_V1.RelationshipUtil.getUPRelationshipAttributesList',
+                getUPRelationshipTags:                          'ICIX_V1.RelationshipUtil.getUPRelationshipTags',
+                getUPRelationshipStatuses:                      'ICIX_V1.RelationshipUtil.getUPRelationshipStatuses',
+                getUPRelationshipTypes:                         'ICIX_V1.RelationshipUtil.getUPRelationshipTypes',
+                getAvailableUPRelationshipTypes:                'ICIX_V1.RelationshipUtil.getAvailableUPRelationshipTypes',
+                getUPRelationshipProductTestLevels:             'ICIX_V1.RelationshipUtil.getUPRelationshipProductTestLevels',
+                
+                getUPRelationshipPermissionsAvalable:           'ICIX_V1.RelationshipUtil.getUPRelationshipPermissionsAvalable1',
+                getUPRelationshipPermissionsSelected:           'ICIX_V1.RelationshipUtil.getUPRelationshipPermissionsSelected1',
+                
+                getProductByUniversalIds:                       'ICIX_V1.RelationshipUtil.getProductByUniversalIds',
+                getProductIXNId:                                'ICIX_V1.RelationshipUtil.getProductIXNId',
+                
+                getPPRelationshipAttributes:                    'ICIX_V1.RelationshipUtil.getPPRelationshipAttributes',
+                getPPRelationshipTags:                          'ICIX_V1.RelationshipUtil.getPPRelationshipTags',
+                getPPRelationshipStatuses:                      'ICIX_V1.RelationshipUtil.getPPRelationshipStatuses',
+                getPPRelationshipTypes:                         'ICIX_V1.RelationshipUtil.getPPRelationshipTypes',
+                
+                getTradingPartnerRelationshipNonUniversalIds:   'ICIX_V1.RelationshipUtil.getUURelationshipIdTypes',
+                getTradingPartnerRelationshipTags:              'ICIX_V1.RelationshipUtil.getUURelationshipTags',
+                getTradingPartnerRelationshipStatuses:          'ICIX_V1.RelationshipUtil.getUURelationshipStatuses',
+                getTradingPartnerRelationshipTypes:             'ICIX_V1.RelationshipUtil.getUURelationshipTypes',
+                
+                checkIfCurrentUserIsAdmin:                      'ICIX_V1.RelationshipUtil.checkIfCurrentUserIsAdmin',
+                addNewTag:                                      'ICIX_V1.RelationshipUtil.addNewTag',
+                editTag:                                        'ICIX_V1.RelationshipUtil.insertRelationshipAttributesTags',
+                getTradingPartner:                              'ICIX_V1.RelationshipUtil.tradingPartnersConnectedWithCurrentUser',
+                deleteTag:                                      'ICIX_V1.RelationshipUtil.deleteRelationshipAttributesOnCancel',
+                getImageUrlFromDistriButionContentId:           'ICIX_V1.RelationshipUtil.getImageUrlFromDistriButionContentId',
+                cancelButtonActionForTags:                      'ICIX_V1.RelationshipUtil.cancelButtonActionForTags',
+                relationshipAttribute:                          'ICIX_V1.RelationshipUtil.getAnyRelationshipAttribute',
+                getstatesList:                                  'ICIX_V1.RelationshipUtil.getStateList',
+                getCountryList:                                 'ICIX_V1.RelationshipUtil.getCountryList',
+                getKeyPrefix:                                   'ICIX_V1.RelationshipUtil.getKeyPrefix',
+                getAttributes:                                  'ICIX_V1.RelationshipUtil.getAttributes',
+                getAttributeGroups:                             'ICIX_V1.RelationshipUtil.getAttributesGroups'
+
+            }
+        };
+
+        window.contentDistributionId = "";
+        window.namespace = "ICIX_V1__";
+        window.classNameRelationshipUtil = "ICIX_V1.RelationshipUtil";
+    </script></span><span id="j_id0:j_id9">
+    <script>
+        window.findProductControllerMapper  = {
+            remoteActions: {
+    tradingPartnerSearch:    'ICIX_V1.FindProductController.tradingPartnerSearch',
+    productSearch:      'ICIX_V1.FindProductController.productSearch',
+    saveRelationship:     'ICIX_V1.FindProductController.saveRelationship',
+    getUbeData:      'ICIX_V1.FindProductController.getUbeData',
+    getUPRelationshipData:    'ICIX_V1.FindProductController.getUPRelationshipData',
+    relatedAccountList:    'ICIX_V1.FindProductController.relatedAccountList'
+            }
+        };
+        window.namespace = "ICIX_V1__";
+        window.contentDistributionId = "";
+    </script></span><span id="j_id0:j_id12">
+    <script>
+     window.relationshipAttributesMapper  = {
+            remoteActions: {
+                getAttributes:    'ICIX_V1.RelationshipUtil.getAttributes',
+                getAttributeGroups:  'ICIX_V1.RelationshipUtil.getAttributesGroups'
+            }
+        };
+        window.namespace = "ICIX_V1__";
+        window.classNameRelationshipAttributesController = "ICIX_V1.RelationshipUtil";
+    </script></span>
+  
+<script type="text/javascript">
+
+var staticURL = "/resource/1544435284000/icix_v1__common";
+var sessionToken="00D1I000002xW9m!ASAAQNyiMJl_ZW0wasanzObOniTvPqe301xrxYDFmbdTHSSD5LwHwaeCafulAaB7TDxt2UeM6mFNX86KXQp.n5_NKfhVfiZh";
+var iconsUrl = sf_design_system.iconsDir;
+var isFindProductPage = true;
+var configSettings =
+{
+  staticPath: staticURL,
+  config: {
+    searchlimit : "25", 
+    currentUbeId: "1eef9479-5119-43d8-a315-7858b6F33156", 
+    defaultProductIds: [{ key: "UPC", value: null}], 
+    filter: ["Products I can connect to", "Connected Products"],
+    permissionOptions: ["Private", "Public", "Viewable to certain Trading Partners"],
+    productRelationshipTabs: ["Relationship Information", "Relationship Tags", "Relationship Attributes", "Privacy Settings"],
+    partnerRelationshipTabs: ["Relationship Information", "Relationship Tags"],
+  }, 
+  baseName: page
+};
+
+var contentLibraryId = "0581I000000H4DnQAK";
+var addInLibrary = true;
+</script>
+<style>
+.wrap1_ids{
+    position: relative;
+}
+.wrap2_ids{
+    position: absolute;
+    margin-top:5px;
+}
+</style>
+
+
+     
+        <!-- uiView: --><ui-view class="ng-scope"> <!-- ngIf: vm.stencilImage -->
+  <!-- ngIf: vm.stencilSearch && !vm.startProductSearchForm -->
+<slds-header icon="product" svg="standard" color="#fff" size="29px" heading="ICIX Products" title="Product Search" ng-hide="vm.modalProductVisibility || vm.modalProductRelationshipVisibility" class="ng-scope ng-isolate-scope"><div class="slds-page-header" role="banner">
+	<div class="slds-grid">
+		<div class="slds-col slds-has-flexi-truncate">
+			<div class="icon-div" ng-style="vm.iconContainerStyle" ng-click="vm.onHeaderClick()">
+				<!-- ngIf: !vm.iconSurl && vm.icon --><svg xmlns="http://www.w3.org/2000/svg" class="slds-icon slds-button__icon" style="height: 29px;" ng-if="!vm.iconSurl &amp;&amp; vm.icon" svg="standard" icon="product" size="29px" color="#fff" ng-style="vm.style">
+	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/standard-sprite/svg/symbols.svg#product" style="color: #fff; fill: #fff;"/>
+</svg><!-- end ngIf: !vm.iconSurl && vm.icon -->
+				<!-- ngIf: vm.iconSurl -->
+			</div>
+			<div class="slds-grid slds-grid--vertical-align-center">
+				<div ng-class="['text-content', {'text-content--v-align': vm.innerSubtitles.length === 0}]" class="text-content">
+					<div class="slds-media__body">
+						<!-- ngIf: vm.heading --><p class="slds-text-heading--label ng-binding ng-scope" ng-if="vm.heading" ng-class="{'slds-type-focus': vm.link || vm.sref }" ng-click="vm.onHeaderClick()">ICIX Products</p><!-- end ngIf: vm.heading -->
+
+						<!-- Breadcrumbs -->
+						<nav role="navigation" aria-label="Breadcrumbs">
+							<ol class="slds-breadcrumb slds-list_horizontal slds-wrap">
+								<!-- ngRepeat: a in vm.breadcrumbs -->
+							</ol>
+						</nav>
+
+						<h1 class="slds-page-header__title slds-p-right--x-small ng-binding">
+							Product Search
+							
+							<!-- ngIf: vm.showWorkflowStatus -->	
+							<!-- ngIf: vm.actionsDropdown -->
+						</h1>
+					</div>
+					<!-- ngRepeat: innerTitle in vm.innerSubtitles -->
+				</div>
+				<div class="right-side-subtitle slds-container--right slds-text-align--right">
+					<!-- ngIf: vm.rightInnerSubtitles -->
+				</div>
+			</div>	
+		</div>
+		<!-- ngIf: vm.actions.length -->
+	</div>
+	<div class="slds-grid">
+		<div class="slds-col slds-has-flexi-truncate">
+			<!-- ngIf: vm.subtitle -->
+		</div>
+		<!-- ngIf: vm.actionsBottom.length -->
+	</div>
+</div></slds-header>
+<div class="slds-container slds-container--center ng-scope">
+
+<!-- ngIf: vm.result != '' -->
+
+<!-- Product Search Form -->
+<!-- ngIf: !vm.stencilImage --><div ng-if="!vm.stencilImage" class="ng-scope">
+<!-- ngIf: vm.startProductSearchForm --><div aria-labelledby="findProduct" ng-if="vm.startProductSearchForm" style="padding:25px;" class="ng-scope">
+  <fieldset class="slds-form--compound">
+    <div class="slds-text-heading--small slds-p-top--medium slds-p-bottom--small">Product Search</div>
+    <div class="form-element__group">
+    	<span class="slds-form-element__helper">Select a Trading Partner <abbr class="slds-required" title="required">*</abbr></span>
+
+		<slds-lookup id="txt_SearchTermTradingPartner" class="slds-size--3-of-3 ng-isolate-scope" model="vm.search.SearchTradingPartner" search-action="tradingPartnerSearch" display-field="TradingPartnerName" icon="account" on-add="selectTradingPartner"><div class="slds-lookup" data-select="single" data-scope="single">
+	<!-- Single select/search -->
+	<!-- ngIf: !vm.multiple --><div class="slds-form-element ng-scope" ng-if="!vm.multiple">
+		<!-- ngIf: vm.readOnly -->
+
+		<!-- ngIf: !vm.readOnly --><div ng-if="!vm.readOnly" class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right ng-scope">
+
+			<!-- ngIf: !vm.loading && !vm.selectedItem --><svg xmlns="http://www.w3.org/2000/svg" class="slds-input__icon slds-button__icon" style="height: ;" icon="search" svg="utility" ng-click="vm.search()" ng-if="!vm.loading &amp;&amp; !vm.selectedItem">
+	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#search" style="color: ; fill: ;"/>
+</svg><!-- end ngIf: !vm.loading && !vm.selectedItem -->
+			<!-- ngIf: vm.loading -->
+
+			<!-- ngIf: vm.selectedItem -->
+
+			<input type="text" id="" class="slds-input ng-valid ng-valid-maxlength ng-not-empty ng-dirty ng-valid-parse ng-touched" ng-show="!vm.selectedItem" ng-model="vm.searchTerm" ng-model-options="vm.modelOptions" role="combobox" placeholder="" maxlength="80" ng-change="vm.search()" ng-focus="vm.search()" />
+		</div><!-- end ngIf: !vm.readOnly -->
+
+		<!-- ngIf: !vm.selectedItem && vm.searchResults.length --><div class="slds-lookup__menu auto ng-scope" role="listbox" ng-if="!vm.selectedItem &amp;&amp; vm.searchResults.length">
+			<!-- ngIf: vm.status -->
+			<ul class="slds-lookup__list" role="presentation" fix-align-on-render="">
+				<!-- ngRepeat: item in vm.searchResults --><li class="slds-lookup__item slds-clear ng-scope" ng-repeat="item in vm.searchResults" ng-init="icon = vm.getIcon(item)">
+					<span role="option">
+						<!-- ngIf: icon.icon --><svg xmlns="http://www.w3.org/2000/svg" class="slds-icon slds-icon slds-icon--medium slds-float--left slds-icon-standard-account slds-button__icon slds-icon--small" style="height: ;" ng-if="icon.icon" icon="account" svg="standard" ng-click="vm.selectItem(item)" ng-class="{ 'slds-icon--medium slds-float--left': vm.hasSubItems(item), 'slds-icon--small': !vm.hasSubItems(item) }">
+	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/standard-sprite/svg/symbols.svg#account" style="color: ; fill: ;"/>
+</svg><!-- end ngIf: icon.icon -->
+						<span class="clickable ng-binding" ng-click="vm.selectItem(item)">QA Org 2 Automation Res Pkg Stg(Los Angeles,US)</span>
+						<!-- ngIf: vm.hasSubItems(item) -->
+					</span>
+				</li><!-- end ngRepeat: item in vm.searchResults -->
+			</ul>
+		</div><!-- end ngIf: !vm.selectedItem && vm.searchResults.length -->
+	</div><!-- end ngIf: !vm.multiple -->
+
+
+	<!-- Multiple select/search -->
+	<!-- ngIf: vm.multiple -->
+
+	<!--The input field to control non formly-form context while submitting a form-->
+	<!-- ngIf: vm.required -->
+</div></slds-lookup>
+
+    	<span class="slds-form-element__helper">Specify a Product Name or a Universal ID</span>
+    	<div class="slds-form-element__row">        
+        	<label class="slds-form-element__control slds-size--3-of-3">
+          	<input id="txt_SearchTerm" name="txt_SearchTerm" ng-model="vm.search.SearchTerm" class="slds-input ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" type="text" maxlength="80" ng-disabled="!vm.search.SearchTradingPartner.id" placeholder="All products" disabled="disabled" />
+        	</label> 
+
+      </div>
+      <div class="slds-form-element__row">
+        <label class="slds-form-element__control slds-size--1-of-3">
+          <button id="btnProductSearch" class="slds-button slds-button--brand" type="button" ng-click="vm.productSearch()" ng-disabled="!vm.search.SearchTradingPartner.id" disabled="disabled">Search</button>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div><!-- end ngIf: vm.startProductSearchForm -->
+</div><!-- end ngIf: !vm.stencilImage -->
+<!-- END Product Search Form -->
+
+<!-- Product Search Results -->
+<!-- ngIf: !vm.startProductSearchForm && !vm.stencilSearch -->
+<!-- END Product Search Results -->
+
+<form id="fileForm" class="ng-pristine ng-valid"></form>
+<partner-connect main="vm" ng-show="vm.modalPartnerVisibility" partner="vm.selectedPartner" action="'next'" class="ng-isolate-scope ng-hide"><!-- Trading Partner Relationship dialog -->
+<!-- ngIf: vm.main.modalPartnerVisibility -->
+<!-- ngIf: vm.stencilPartner && !vm.main.modalPartnerVisibility -->
+<!-- ngIf: !vm.stencilPartner && vm.main.modalPartnerVisibility --></partner-connect>
+<product-connect main="vm" ng-show="vm.modalProductVisibility || vm.modalProductRelationshipVisibility" partner="vm.selectedPartner" product="vm.selectedResult" btn_back="vm.selectedResult &amp;&amp; vm.selectedResult.isTradingPartnerConnected == false" btn_next="true" btn_save="true" class="ng-isolate-scope ng-hide"><!-- Product Partner with New design START -->
+<!-- ngIf: vm.main.modalProductVisibility || vm.main.modalProductRelationshipVisibility -->
+<!-- ngIf: vm.stencilProduct -->
+
+<div aria-labelledby="productData">
+
+	<!-- modal Product START -->
+	<div ng-show="vm.main.modalProductVisibility &amp;&amp; !vm.main.stencilProduct" class="slds-card body-background ng-hide">
+		<div class="slds-card__body italic-header" ng-class="{'italic-header':!vm.uprelationshipId}">
+			<slds-header icon="product" svg="standard" color="#fff" size="29px" heading="ICIX Products" title="New Product" class="ng-isolate-scope"><div class="slds-page-header" role="banner">
+	<div class="slds-grid">
+		<div class="slds-col slds-has-flexi-truncate">
+			<div class="icon-div" ng-style="vm.iconContainerStyle" ng-click="vm.onHeaderClick()">
+				<!-- ngIf: !vm.iconSurl && vm.icon --><svg xmlns="http://www.w3.org/2000/svg" class="slds-icon slds-button__icon" style="height: 29px;" ng-if="!vm.iconSurl &amp;&amp; vm.icon" svg="standard" icon="product" size="29px" color="#fff" ng-style="vm.style">
+	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/standard-sprite/svg/symbols.svg#product" style="color: #fff; fill: #fff;"/>
+</svg><!-- end ngIf: !vm.iconSurl && vm.icon -->
+				<!-- ngIf: vm.iconSurl -->
+			</div>
+			<div class="slds-grid slds-grid--vertical-align-center">
+				<div ng-class="['text-content', {'text-content--v-align': vm.innerSubtitles.length === 0}]" class="text-content">
+					<div class="slds-media__body">
+						<!-- ngIf: vm.heading --><p class="slds-text-heading--label ng-binding ng-scope" ng-if="vm.heading" ng-class="{'slds-type-focus': vm.link || vm.sref }" ng-click="vm.onHeaderClick()">ICIX Products</p><!-- end ngIf: vm.heading -->
+
+						<!-- Breadcrumbs -->
+						<nav role="navigation" aria-label="Breadcrumbs">
+							<ol class="slds-breadcrumb slds-list_horizontal slds-wrap">
+								<!-- ngRepeat: a in vm.breadcrumbs -->
+							</ol>
+						</nav>
+
+						<h1 class="slds-page-header__title slds-p-right--x-small ng-binding">
+							New Product
+							
+							<!-- ngIf: vm.showWorkflowStatus -->	
+							<!-- ngIf: vm.actionsDropdown -->
+						</h1>
+					</div>
+					<!-- ngRepeat: innerTitle in vm.innerSubtitles -->
+				</div>
+				<div class="right-side-subtitle slds-container--right slds-text-align--right">
+					<!-- ngIf: vm.rightInnerSubtitles -->
+				</div>
+			</div>	
+		</div>
+		<!-- ngIf: vm.actions.length -->
+	</div>
+	<div class="slds-grid">
+		<div class="slds-col slds-has-flexi-truncate">
+			<!-- ngIf: vm.subtitle -->
+		</div>
+		<!-- ngIf: vm.actionsBottom.length -->
+	</div>
+</div></slds-header>
+				<div class="slds-grid slds-wrap slds-m-horizontal--large slds-m-top--large slds-m-bottom--small">
+					<div class="slds-col slds-size--1-of-1">
+						<h3 class="slds-text-heading--small">Add your Product Information</h3>
+						<!-- ngIf: vm.main.errorProduct -->
+					</div>
+				</div>
+				<form ng-novalidate="true" name="myForm" role="form" class="slds-m-bottom--large slds-m-top--small ng-pristine ng-valid ng-valid-maxlength">
+					<div class="slds-m-horizontal--large slds-m-bottom--small">
+						<div class="slds-form-element slds-has-required">
+							<label class="slds-form-element__label" for="ProductName">Product Name<abbr class="slds-required" title="required">*</abbr></label>
+							<div class="slds-form-element__control ">
+								<input id="ProductName" class="slds-input ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" type="text" ng-model="vm.main.product.name" ng-keypress="vm.focusEnter($event)" maxlength="80" />
+							</div>
+						</div>
+					</div>
+					
+					<!-- Add universal Ids -->
+					<div class="slds-grid slds-m-horizontal--large slds-m-bottom--small" aria-labelledby="addIds">
+						<div class="slds-col slds-size--1-of-1">
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="Universal_IDs">IDs</label>
+								<!-- ngRepeat: id in vm.main.product.universalIds -->
+								<div class="slds-form-element__control">
+									<a id="btn_product_UniversalId_Add" ng-click="vm.addProductId()" style="cursor: pointer;">+ Add another ID</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END Add universal Ids -->
+
+					<div class="slds-m-horizontal--large slds-m-bottom--small">
+						<div class="slds-form-element">
+							<label class="slds-form-element__label" for="ProductDesc">Product Description <span style="color: #9faab5" class="ng-binding"> ( Max Limit : 255 characters , characters left : 255  )</span></label>
+							<div class="slds-form-element__control">
+								<textarea maxlength="255" id="ProductDesc" class="slds-textarea ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" ng-model="vm.main.product.description" placeholder="Product Description" style="height:140px;"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="slds-m-horizontal--large slds-m-bottom--small">
+						<label class="slds-form-element__label" for="ProductDesc">Product Image</label>
+						<label style="color: red; margin-left: 108px;" class="slds-form-element__label slds-text-heading--small">
+							<label style="display:none" id="FileExtErrorMessage">Please Upload only PNG Or JPG file.</label>
+							<label style="display:none" id="ImageUploadSuccess">Image uploaded successfully.</label>
+							<label style="display:none" id="waitingMsg">Please wait while Image uploading....</label>
+						</label>
+
+						<div id="dottedBox" class="slds-text-body--regular fileDrop" style="width:100%; height:180px;">
+						<div id="hideThis">
+							<span class="slds-icon__container" ng-show="!vm.main.openImagePreview">
+								<svg xmlns="http://www.w3.org/2000/svg" class="slds-icon slds-icon-text-default slds-button__icon" style="height: ;" icon="upload" svg="utility">
+	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#upload" style="color: ; fill: ;"/>
+</svg>
+								<span class="slds-assistive-text">Upload</span>
+							</span>
+							<br />
+							<div ng-show="!vm.main.openImagePreview">Drag files here to upload or <a id="browseLink" href="#">browse</a></div>
+						</div>
+							<span class="size-20" id="fileNameDiv"></span>
+							<div ng-show="vm.main.openImagePreview" class="ng-hide">
+								<a><span class="size-20" ng-click="vm.showImageInNewTab()" id="img_Name"> </span></a>
+								<span id="cancelbtnupload" ng-click="vm.deleteImage()" class="delete-image-btn">
+									<svg xmlns="http://www.w3.org/2000/svg" class="slds-icon slds-icon-text-default slds-button__icon" style="height: 24px;" icon="close" svg="utility" size="24px" color="red">
+	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#close" style="color: red; fill: red;"/>
+</svg>
+								</span>
+							</div>
+							<div id="progressBarCreateProduct" style="width: 25%; display: none;">
+								<div class="mini-progress-bar slds-hide">
+									<div class="progress" id="mini-progress-0"></div>
+								</div>
+							</div>
+							<a href="" class="display-none" id="mng_vis" ng-click="vm.ManageImageVisibility()">hidden</a>
+						</div>
+					</div>
+					<button ng-show="!vm.main.openImagePreview" style="display: none;" class="slds-button slds-button--brand slds-m-horizontal--large" id="uploadButton" disabled="disabled">Upload</button>
+				</form>
+			</div>
+
+			<div class="slds-m-around--medium slds-float--right">
+				<!-- ngIf: vm.btnBack -->
+				<button class="slds-button slds-button--neutral" ng-click="vm.cancel()">Cancel</button>
+				<button id="btn_UPRelationship_Next" class="slds-button slds-button--brand" ng-click="vm.next()" ng-disabled="vm.main.loading">Next</button>
+			</div>
+		</div>
+	</div>
+	<!-- modal Product END -->
+
+	<!-- modal Product Relationship START -->
+	<div ng-show="vm.main.modalProductRelationshipVisibility &amp;&amp; !vm.stencilProduct" class="slds-card body-background ng-hide">
+		<!-- ngIf: vm.main.modalProductRelationshipVisibility -->
+		<div>
+			<div class="slds-card__body"> 
+				<slds-header icon="product" svg="standard" color="#fff" size="29px" heading="ICIX Products" title="" class="ng-isolate-scope"><div class="slds-page-header" role="banner">
+	<div class="slds-grid">
+		<div class="slds-col slds-has-flexi-truncate">
+			<div class="icon-div" ng-style="vm.iconContainerStyle" ng-click="vm.onHeaderClick()">
+				<!-- ngIf: !vm.iconSurl && vm.icon --><svg xmlns="http://www.w3.org/2000/svg" class="slds-icon slds-button__icon" style="height: 29px;" ng-if="!vm.iconSurl &amp;&amp; vm.icon" svg="standard" icon="product" size="29px" color="#fff" ng-style="vm.style">
+	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/standard-sprite/svg/symbols.svg#product" style="color: #fff; fill: #fff;"/>
+</svg><!-- end ngIf: !vm.iconSurl && vm.icon -->
+				<!-- ngIf: vm.iconSurl -->
+			</div>
+			<div class="slds-grid slds-grid--vertical-align-center">
+				<div ng-class="['text-content', {'text-content--v-align': vm.innerSubtitles.length === 0}]" class="text-content">
+					<div class="slds-media__body">
+						<!-- ngIf: vm.heading --><p class="slds-text-heading--label ng-binding ng-scope" ng-if="vm.heading" ng-class="{'slds-type-focus': vm.link || vm.sref }" ng-click="vm.onHeaderClick()">ICIX Products</p><!-- end ngIf: vm.heading -->
+
+						<!-- Breadcrumbs -->
+						<nav role="navigation" aria-label="Breadcrumbs">
+							<ol class="slds-breadcrumb slds-list_horizontal slds-wrap">
+								<!-- ngRepeat: a in vm.breadcrumbs -->
+							</ol>
+						</nav>
+
+						<h1 class="slds-page-header__title slds-p-right--x-small ng-binding">
+							
+							
+							<!-- ngIf: vm.showWorkflowStatus -->	
+							<!-- ngIf: vm.actionsDropdown -->
+						</h1>
+					</div>
+					<!-- ngRepeat: innerTitle in vm.innerSubtitles -->
+				</div>
+				<div class="right-side-subtitle slds-container--right slds-text-align--right">
+					<!-- ngIf: vm.rightInnerSubtitles -->
+				</div>
+			</div>	
+		</div>
+		<!-- ngIf: vm.actions.length -->
+	</div>
+	<div class="slds-grid">
+		<div class="slds-col slds-has-flexi-truncate">
+			<!-- ngIf: vm.subtitle -->
+		</div>
+		<!-- ngIf: vm.actionsBottom.length -->
+	</div>
+</div></slds-header>
+				<div class="slds-grid slds-wrap  slds-m-horizontal--large slds-m-top--large slds-m-bottom--small">
+					<div class="slds-col slds-size--1-of-1">
+						<h3 class="slds-text-heading--small">Define Your ICIX Product Relationship</h3>
+						<!-- ngIf: vm.main.errorProductRelationship -->
+					</div>
+				</div>
+
+				<!-- Product Relationship Tabs START  -->
+				<div class="slds-tabs--scoped slds-m-horizontal--large" style="width: auto;">
+					<ul class="slds-tabs--scoped__nav" role="tablist">
+						<!-- ngRepeat: name in vm.productRelationshipTabs --><li class="slds-tabs--scoped__item slds-text-heading--label slds-active" title="Relationship Information" ng-repeat="name in vm.productRelationshipTabs">
+							<a ng-click="vm.setSelectedTab( $index )" aria-selected="true" class="slds-tabs--scoped__link ng-binding" href="#" aria-controls="tab-ProductRelationship-0" id="tab-ProductRelationship-0__item">
+								Relationship Information
+							</a>
+						</li><!-- end ngRepeat: name in vm.productRelationshipTabs --><li class="slds-tabs--scoped__item slds-text-heading--label " title="Relationship Tags" ng-repeat="name in vm.productRelationshipTabs">
+							<a ng-click="vm.setSelectedTab( $index )" aria-selected="false" class="slds-tabs--scoped__link ng-binding" href="#" aria-controls="tab-ProductRelationship-1" id="tab-ProductRelationship-1__item">
+								Relationship Tags
+							</a>
+						</li><!-- end ngRepeat: name in vm.productRelationshipTabs --><li class="slds-tabs--scoped__item slds-text-heading--label " title="Relationship Attributes" ng-repeat="name in vm.productRelationshipTabs">
+							<a ng-click="vm.setSelectedTab( $index )" aria-selected="false" class="slds-tabs--scoped__link ng-binding" href="#" aria-controls="tab-ProductRelationship-2" id="tab-ProductRelationship-2__item">
+								Relationship Attributes
+							</a>
+						</li><!-- end ngRepeat: name in vm.productRelationshipTabs --><li class="slds-tabs--scoped__item slds-text-heading--label " title="Privacy Settings" ng-repeat="name in vm.productRelationshipTabs">
+							<a ng-click="vm.setSelectedTab( $index )" aria-selected="false" class="slds-tabs--scoped__link ng-binding" href="#" aria-controls="tab-ProductRelationship-3" id="tab-ProductRelationship-3__item">
+								Privacy Settings
+							</a>
+						</li><!-- end ngRepeat: name in vm.productRelationshipTabs -->
+					</ul>
+					<div class="fulltabs" ng-class="{fadediv:vm.tabsactive}">
+					<!-- RELATIONSHIP INFORMATION Tab content	-->
+					<!-- ngIf: vm.selectedTab == 0 --><div class="slds-tabs--scoped__content slds-show ng-scope" ng-if="vm.selectedTab == 0">
+						<!-- ngIf: !vm.main.openNewProductPagePopup -->
+						<!-- ngIf: vm.main.openNewProductPagePopup --><div class="slds-m-bottom--small ng-scope" ng-if="vm.main.openNewProductPagePopup">
+							<div class="slds-form-element slds-has-required">
+								<label class="slds-form-element__label" for="txt_UP_TradingPartnerName">Trading Partner</label>
+								<div class="slds-form-element__control">
+									<input type="text" class="slds-input ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" maxlength="80" ng-model="vm.main.selectedProductRelationship.UPTardingPartner" ng-keyup="vm.tradingPartnersConnectedWithMe(vm.main.selectedProductRelationship.UPTardingPartner)" id="txt_UP_TradingPartnerName" />
+									<!-- ngIf: vm.main.selectedProductRelationship.showUlLoading -->
+									<!-- ngIf: vm.main.selectedProductRelationship.results.length > 0 && vm.main.selectedProductRelationship.showUl -->
+								</div>
+							</div>
+						</div><!-- end ngIf: vm.main.openNewProductPagePopup -->
+
+						<!-- Relationship type & Relationship status select -->
+						<div class="slds-grid slds-m-bottom--small" aria-labelledby="upRelationshipDetails">
+							<div class="slds-col slds-size--3-of-12">
+								<div class="slds-form-element slds-has-required">
+									<label class="slds-form-element__label" for="ddl_UPRelationship_Status">Relationship Status<abbr class="slds-required" title="required">*</abbr></label>
+									<div class="slds-form-element__control">
+										<div class="slds-select_container">
+											<select id="ddl_UPRelationship_Status" class="slds-select ng-pristine ng-untouched ng-valid ng-empty" ng-model="vm.main.selectedProductRelationship.relationshipStatus" ng-options="status for status in vm.main.relationshipStatuses"><option value="?" selected="selected"></option></select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="slds-col slds-size--3-of-12 slds-m-left--medium">
+								<div class="slds-form-element slds-has-required">
+								<label class="slds-form-element__label" for="ddl_UPRelationship_Type" id="testless">
+								Relationship Type<abbr class="slds-required" title="required">*</abbr></label>
+								  <div class="slds-form-element__control">
+									<div class="slds-select_container">
+										<select id="ddl_UPRelationship_Type" class="slds-select ng-pristine ng-untouched ng-valid ng-empty" ng-model="vm.main.selectedProductRelationship.relationshipType" ng-options="type for type in vm.main.relationshipTypes" ng-disabled="vm.main.relationshipTypes.length==0"><option value="?" selected="selected"></option></select>
+									</div>
+								  </div>
+								  <!-- ngIf: vm.main.relationshipTypes.length==0 -->
+								</div>
+							</div>
+							<div class="slds-col slds-size--6-of-12"></div>
+						</div>
+
+						<!-- Add non universal Ids -->
+						<div class="slds-grid slds-m-bottom--small" aria-labelledby="addIds">
+							<div class="slds-col slds-size--1-of-1">
+								<div class="slds-form-element">
+									<label class="slds-form-element__label" for="Opportunity-Name">Internal Product IDs</label>
+									<!-- ngRepeat: id in vm.main.selectedProductRelationship.nonUniversalIds -->
+									<div class="slds-form-element__control">
+										<a id="btn_UPRelationship_NonUniversalId_Add" ng-click="vm.addRelationshipId()" style="cursor: pointer;">+ Add another ID</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- END Add non universal Ids -->
+
+						<!-- Comment textarea -->
+						<div class="slds-grid slds-m-bottom--small" aria-labelledby="uuRelationshipComment">
+							<div class="slds-col slds-size--1-of-1">
+								<div class="slds-form-element">
+								  <label class="slds-form-element__label" for="Opportunity-Name">
+									Comments
+								  </label>
+								  <div class="slds-form-element__control">
+									<textarea id="txt_UPRelationship_Comment" class="slds-textarea ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" ng-model="vm.main.selectedProductRelationship.comment" maxlength="500" rows="5"></textarea>
+								  </div>
+								</div>
+							</div>
+						</div>
+						<!-- END Comment textarea -->
+					</div><!-- end ngIf: vm.selectedTab == 0 -->
+					<!-- END RELATIONSHIP INFORMATION Tab content -->
+
+					<!-- TAGS Tab content -->
+					<!-- ngIf: vm.selectedTab == 1 -->
+					<!-- END TAGS Tab content -->
+
+					<!-- ATTRIBUTES Tab content -->
+					<!-- ngIf: vm.selectedTab == 2 -->
+					<!-- END ATTRIBUTES Tab content -->
+
+					<!-- PRIVACY SETTINGS Tab content -->
+					<!-- ngIf: vm.selectedTab == 3 -->
+					<!-- END PRIVACY SETTINGS Tab content -->
+					</div>
+				</div>
+				<!-- Product Relationship Tabs END  -->
+			</div>
+
+			<!-- buttons -->
+			<div class="slds-m-around--medium slds-float--right">
+				<button id="btn_UPRelationship_previous2" class="slds-button slds-button--neutral" ng-disabled="vm.main.loading" ng-click="vm.previous()">Previous</button> 
+
+				<button class="slds-button--neutral slds-button svg-button ng-isolate-scope" ng-class="vm.buttonClass()" text="Cancel" ng-disabled="vm.main.loading" dynamic-text="vm.main.cancelButtonText" ng-click="vm.cancel()" id="btn_UPRelationship_Cancel">
+	<!-- ngIf: vm.assistiveText -->
+	<!-- ngIf: vm.icon && !vm.link && !vm.showLoader -->
+	<!-- ngIf: vm.dynamicText && !vm.link && !vm.showLoader --><span ng-if="vm.dynamicText &amp;&amp; !vm.link &amp;&amp; !vm.showLoader" class="ng-binding ng-scope">Cancel</span><!-- end ngIf: vm.dynamicText && !vm.link && !vm.showLoader -->
+
+	<!-- ngIf: vm.link -->
+
+	<!-- ngIf: vm.showLoader -->
+</button>
+
+				<!-- ngIf: vm.btnSave --><button class="slds-button--brand slds-button svg-button ng-scope ng-isolate-scope" ng-class="vm.buttonClass()" text="Save" show-loader="vm.main.loading" ng-disabled="vm.main.loading" ng-click="vm.save()" id="btn_UPRelationship_Save" ng-if="vm.btnSave">
+	<!-- ngIf: vm.assistiveText -->
+	<!-- ngIf: vm.icon && !vm.link && !vm.showLoader -->
+	<!-- ngIf: vm.dynamicText && !vm.link && !vm.showLoader --><span ng-if="vm.dynamicText &amp;&amp; !vm.link &amp;&amp; !vm.showLoader" class="ng-binding ng-scope">Save</span><!-- end ngIf: vm.dynamicText && !vm.link && !vm.showLoader -->
+
+	<!-- ngIf: vm.link -->
+
+	<!-- ngIf: vm.showLoader -->
+</button><!-- end ngIf: vm.btnSave -->
+			</div>
+			<!-- END buttons -->
+		</div>
+	</div>
+	<!-- modal Product Relationship END -->
+
+
+<!-- Product Partner with New design END -->
+</product-connect>
+
+<slds-toast variable="toast.success" visible="vm.modalDialogVisibility" position="top" text-align="left" status="success" message="New Product Relationship created successfully." duration="3000" redirect="vm.modalDialogRedirect" class="ng-isolate-scope"><!-- ngIf: vm.visible -->
+</slds-toast>
+
+ <edit-dialog variable="confirmationDialog" visible="vm.modalConfirmationDialogVisibility" dialog-title="Success" message="" actions="vm.confirmationDialogActions" class="ng-isolate-scope"><!-- ngIf: vm.visible && vm.isModal -->
+<div ng-show="vm.visible" ng-class="vm.classes" class="ng-hide slds-modal slds-fade-in-open">
+    <div ng-class="{'slds-modal__container': vm.isModal}" class="slds-modal__container">
+        <div ng-class="{ 'slds-modal__header': vm.dialogTitle || vm.dialogSubtitle }" class="ng-binding slds-modal__header">
+            <h2 class="slds-text-heading--medium slds-text-align--center ng-binding">Success</h2>
+            <button class="slds-button slds-modal__close slds-button svg-button ng-isolate-scope slds-button--icon-inverse" ng-class="vm.buttonClass()" icon="close" svg="utility" button-classes="slds-button--icon-inverse" assistive-text="Close" ng-click="vm.close()">
+	<!-- ngIf: vm.assistiveText --><span class="slds-assistive-text ng-binding ng-scope" ng-if="vm.assistiveText">Close</span><!-- end ngIf: vm.assistiveText -->
+	<!-- ngIf: vm.icon && !vm.link && !vm.showLoader --><svg xmlns="http://www.w3.org/2000/svg" class="slds-button__icon" style="height: ;" ng-if="vm.icon &amp;&amp; !vm.link &amp;&amp; !vm.showLoader" svg="utility" icon="close" color="" size="" ng-class="vm.iconClasses">
+	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/apexpages/slds/latest/assets/icons/utility-sprite/svg/symbols.svg#close" style="color: ; fill: ;"/>
+</svg><!-- end ngIf: vm.icon && !vm.link && !vm.showLoader -->
+	<!-- ngIf: vm.dynamicText && !vm.link && !vm.showLoader -->
+
+	<!-- ngIf: vm.link -->
+
+	<!-- ngIf: vm.showLoader -->
+</button>
+            
+        </div>
+        
+        <div class="slds-scope panel-content slds-scrollable--y slds-modal__content" ng-class="{'slds-modal__content': vm.isModal}">
+            <!-- ngIf: vm.message -->
+            <!-- edit form with selected fields -->
+            <!-- ngIf: vm.model && (vm.fields.length || vm.fieldNames.length) -->
+            <div ng-transclude=""></div>
+        </div>
+
+        <!-- ngIf: vm.cancelButton || vm.actions.length || vm.footerText --><div class="slds-modal__footer ng-scope" ng-if="vm.cancelButton || vm.actions.length || vm.footerText">
+            <!-- ngIf: vm.footerText -->
+            <!-- ngIf: vm.cancelButton -->
+
+            <!-- ngRepeat: a in vm.actions --><!-- ngIf: vm.showButton(a) --><button class="slds-button slds-button svg-button ng-scope ng-isolate-scope slds-button--neutral" ng-class="vm.buttonClass()" ng-repeat="a in vm.actions" variable="confirmationDialog_action_0" ng-if="vm.showButton(a)" ng-disabled="vm.disableButton(a)" dynamic-text="vm.getButtonText(a)" icon="" svg="" show-loader="vm.showLoader(a)" title="" button-classes="slds-button--neutral" link="vm.getButtonLink(a)" download="vm.getButtonDownloadAttr(a)" ng-click="vm.doAction(a)">
+	<!-- ngIf: vm.assistiveText -->
+	<!-- ngIf: vm.icon && !vm.link && !vm.showLoader -->
+	<!-- ngIf: vm.dynamicText && !vm.link && !vm.showLoader --><span ng-if="vm.dynamicText &amp;&amp; !vm.link &amp;&amp; !vm.showLoader" class="ng-binding ng-scope">No</span><!-- end ngIf: vm.dynamicText && !vm.link && !vm.showLoader -->
+
+	<!-- ngIf: vm.link -->
+
+	<!-- ngIf: vm.showLoader -->
+</button><!-- end ngIf: vm.showButton(a) --><!-- end ngRepeat: a in vm.actions --><!-- ngIf: vm.showButton(a) --><button class="slds-button slds-button svg-button ng-scope ng-isolate-scope slds-button--brand" ng-class="vm.buttonClass()" ng-repeat="a in vm.actions" variable="confirmationDialog_action_1" ng-if="vm.showButton(a)" ng-disabled="vm.disableButton(a)" dynamic-text="vm.getButtonText(a)" icon="" svg="" show-loader="vm.showLoader(a)" title="" button-classes="slds-button--brand" link="vm.getButtonLink(a)" download="vm.getButtonDownloadAttr(a)" ng-click="vm.doAction(a)">
+	<!-- ngIf: vm.assistiveText -->
+	<!-- ngIf: vm.icon && !vm.link && !vm.showLoader -->
+	<!-- ngIf: vm.dynamicText && !vm.link && !vm.showLoader --><span ng-if="vm.dynamicText &amp;&amp; !vm.link &amp;&amp; !vm.showLoader" class="ng-binding ng-scope">Yes</span><!-- end ngIf: vm.dynamicText && !vm.link && !vm.showLoader -->
+
+	<!-- ngIf: vm.link -->
+
+	<!-- ngIf: vm.showLoader -->
+</button><!-- end ngIf: vm.showButton(a) --><!-- end ngRepeat: a in vm.actions -->
+
+            <!-- ngIf: vm.confirmButton -->
+
+        </div><!-- end ngIf: vm.cancelButton || vm.actions.length || vm.footerText -->
+    </div>
+
+</div>
+</edit-dialog>
+
+</div></ui-view>
+    
+<script>if (this.SfdcApp &amp;&amp; this.SfdcApp.projectOneNavigator) { SfdcApp.projectOneNavigator.sendTitleToParent('ICIX_V1__ICIX_Product__c'); } </script></body></html>
